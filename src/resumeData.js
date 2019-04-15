@@ -32,14 +32,15 @@ let resumeData = {
         }
     ],
     skills : [
-        { name : 'NodeJS', level : '80%' },
-        { name : 'NoSQL', level : '83%' },
-        { name : 'SQL', level : '70%' },
+        { name : 'JS', level : '90%' },
+        // { name : 'NoSQL', level : '83%' },
+        // { name : 'SQL', level : '70%' },
         { name : 'Python', level : '75%' },
-        { name : 'Django', level : '72%' },
-        { name : 'Vue.js', level : '82%' },
-        { name : 'React.js', level : '88%' },
-        { name : 'React Native', level : '82%' },
+        // { name : 'Django', level : '72%' },
+        // { name : 'Vue.js', level : '82%' },
+        // { name : 'React.js', level : '88%' },
+        { name : 'html', level : '85%' },
+        { name : 'css', level : '80%' },
     ]
 }
 

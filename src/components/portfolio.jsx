@@ -15,8 +15,8 @@ export default function portfolio() {
                                     <img alt='farmerboy' src="images/portfolio/farmerboy.jpg" />
                                     <div className="overlay">
                                         <div className="portfolio-item-meta">
-                                            <h5>Farmer Boy</h5>
-                                            <p>Branding</p>
+                                            <h5>H8 Bike Commpunity</h5>
+                                            <p>Vue.js</p>
                                         </div>
                                     </div>
                                     <div className="link-icon"><i className="icon-plus" /></div>
@@ -73,13 +73,12 @@ export default function portfolio() {
                 <div id="modal-05" className="popup-modal mfp-hide">
                     <img className="scale-with-grid" src="images/portfolio/modals/m-farmerboy.jpg" alt='img' />
                     <div className="description-box">
-                        <h4>Farmer Boy</h4>
-                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,
-                            nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-                        <span className="categories"><i className="fa fa-tag" />Branding, Webdesign</span>
+                        <h4>H8 Bike Community</h4>
+                        <p>Blog , Community and e-commerce web build with Vue.js</p>
+                        <span className="categories"><i className="fa fa-tag" />Blog, Community</span>
                     </div>
                     <div className="link-box">
-                        <a href="http://www.behance.net">Details</a>
+                        <a href="https://adishare.github.io/hacktivoverflow-1/">Details</a>
                         <a className="popup-modal-dismiss">Close</a>
                     </div>
                 </div>{/* modal-05 End */}

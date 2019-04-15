@@ -61,8 +61,8 @@ export default function resume(props) {
                     <h1><span>Skills</span></h1>
                 </div>
                 <div className="nine columns main-col">
-                    {/* <p> .
-                    </p> */}
+                    <p> JQuery, Vue.js, React.js, React Native, Express, Django, SQLite, PostgreSQL, MongoDB, Redux, Redis, Firebase, Google Cloud Platform, AWS, CMS,  GraphQL, OAuth, Git Version Control 
+                    </p>
                     <div className="bars">
                         <ul className="skills">
                             {skills.map(skill => {

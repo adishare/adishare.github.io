@@ -48,7 +48,7 @@ export default class contact extends Component {
                 name,
                 email,
                 message,
-                createdAt: moment(new Date()).format('DD-MMM-YY hh:mm')
+                createdAt: moment(new Date()).format('DD-MMM-YY HH:mm')
             })
             .then(data => {
                 $('#image-loader').fadeOut();
