@@ -35,34 +35,50 @@ export default class contact extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        $('#image-loader').fadeIn();
 
-        let {name,email,message} = this.state
-        db.ref(`/gh-pages/contacts/`).push({
-            name,
-            email,
-            message,
-            createdAt: moment(new Date()).format('DD-MMM-YY hh:mm')
-        })
-        .then(data => {
-            console.log(data)
-            $('#image-loader').fadeOut();
-            $('#message-warning').hide();
-            $('#contactForm').fadeOut();
-            $('#message-success').fadeIn(); 
-            this.setState({
-                ...this.state,
-                name : '',
-                email : '',
-                message : ''
-            })
-        })
-        .catch(err => {
-            console.log(err)
-            $('#image-loader').fadeOut();
-            $('#message-warning').html(err);
+        if (this.validateForm() !== true)  {
+            $('#message-warning').html(this.validateForm());
             $('#message-warning').fadeIn();
-        })
+        }
+        else {
+            $('#image-loader').fadeIn();
+    
+            let {name,email,message} = this.state
+            db.ref(`/gh-pages/contacts/`).push({
+                name,
+                email,
+                message,
+                createdAt: moment(new Date()).format('DD-MMM-YY hh:mm')
+            })
+            .then(data => {
+                $('#image-loader').fadeOut();
+                $('#message-warning').hide();
+                $('#contactForm').fadeOut();
+                $('#message-success').fadeIn(); 
+                this.setState({
+                    ...this.state,
+                    name : '',
+                    email : '',
+                    message : ''
+                })
+            })
+            .catch(err => {
+                $('#image-loader').fadeOut();
+                $('#message-warning').html(err);
+                $('#message-warning').fadeIn();
+            })
+        }
+
+    }
+
+    validateForm = () => {
+        let {name,email,message} = this.state
+        if(name.length < 3 || email.length < 3 || message.length < 5) return 'Please fill correct input'
+
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!re.test(email)) return 'Invalid email'
+
+        return true
     }
 
     render() {
@@ -83,7 +99,7 @@ export default class contact extends Component {
 
                 <div className="row">
                     <div className="eight columns">
-                        
+                        <div id="message-warning"> Error boy</div>
                         <form onSubmit={this.handleSubmit} id="contactForm" name="contactForm">
                             <fieldset>
                                 <div>
@@ -106,9 +122,9 @@ export default class contact extends Component {
                                 </div>
                             </fieldset>
                         </form> 
-                        <div id="message-warning"> Error boy</div>
                         <div id="message-success">
                             <i className="fa fa-check" />Your message was sent, thank you!<br />
+                            
                         </div>
                     </div>
 

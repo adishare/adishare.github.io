@@ -25,7 +25,7 @@ export default function about() {
                         </div>
                         <div className="columns download">
                             <p>
-                                <a href="#" className="button"><i className="fa fa-download" />Download Resume</a>
+                                <a href="resume.pdf" className="button" download='CV - Fathul Qorib A.pdf'><i className="fa fa-download" />Download Resume</a>
                             </p>
                         </div>
                     </div> {/* end row */}
