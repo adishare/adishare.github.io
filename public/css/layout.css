@@ -47,12 +47,13 @@ header:before {
    vertical-align: middle;
    height: 100%;
 }
+
 header .banner {
    display: inline-block;
    vertical-align: middle;
    margin: 0 auto;
    width: 85%;
-   padding-bottom: 30px;s
+   padding-bottom: 30px;
    text-align: center;
 }
 
@@ -842,15 +843,16 @@ call-to-action .button {
 #contact input,
 #contact textarea,
 #contact select {
-   padding: 18px 20px;
+   padding: 13px 13px;
 	color: #eee;
 	background: #373233;
-	margin-bottom: 42px;
+	margin-bottom: 15px;
 	border: 0;
 	outline: none;
    font-size: 15px;
    line-height: 24px;
    width: 65%;
+   border-radius: 2px;
 }
 #contact input:focus,
 #contact textarea:focus,

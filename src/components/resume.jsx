@@ -61,8 +61,8 @@ export default function resume(props) {
                     <h1><span>Skills</span></h1>
                 </div>
                 <div className="nine columns main-col">
-                    <p> .
-                    </p>
+                    {/* <p> .
+                    </p> */}
                     <div className="bars">
                         <ul className="skills">
                             {skills.map(skill => {
