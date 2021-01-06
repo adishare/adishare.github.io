@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://adishare.github.io",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "firebase": "^5.9.4",
     "gh-pages": "^2.0.1",
     "jquery": "^3.4.0",
