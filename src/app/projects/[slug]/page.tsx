@@ -9,13 +9,17 @@ import { projects } from "@/data/projects";
 
 // import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
+// type PageProps = {
+// 	params: {
+// 		slug?: string;
+// 	};
+// };
 export const generateStaticParams = async () => {
 	return projects.map((project) => ({
 		slug: project.slug,
 	}));
 };
-
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: any) {
 	// const { elementRef: heroRef, isIntersecting: heroVisible } =
 	// 	useIntersectionObserver();
 	// const { elementRef: contentRef, isIntersecting: contentVisible } =
@@ -55,9 +59,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 				<div
 					// ref={heroRef}
 					className={`transition-all duration-800 ease-out ${
-						true
-							? "opacity-100 translate-y-0"
-							: "opacity-0 translate-y-8"
+						true ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
 					}`}
 				>
 					<div className="flex items-center gap-3 mb-6">
@@ -102,9 +104,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 				<div
 					// ref={contentRef}
 					className={`transition-all duration-800 ease-out ${
-						true
-							? "opacity-100 translate-y-0"
-							: "opacity-0 translate-y-8"
+						true ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
 					}`}
 				>
 					<div className="grid lg:grid-cols-3 gap-12">
@@ -163,9 +163,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 							<div
 								// ref={screenshotsRef}
 								className={`transition-all duration-800 ease-out ${
-									true
-										? "opacity-100 translate-y-0"
-										: "opacity-0 translate-y-8"
+									true ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
 								}`}
 							>
 								<h2 className="text-2xl font-semibold mb-8">Screenshots</h2>
