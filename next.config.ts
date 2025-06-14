@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
 	},
 	devIndicators: false,
 	output: "export",
-	distDir: "dist",
+	// distDir: "dist",
 };
 
 export default nextConfig;
