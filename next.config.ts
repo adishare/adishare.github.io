@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
 	},
 	devIndicators: false,
 	output: "export",
-	// basePath: "/portfolio",
+	// basePath: "/adishare.github.io",
 	distDir: "dist",
 };
 
