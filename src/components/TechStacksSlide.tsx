@@ -56,11 +56,11 @@ const defaultTechnologies = [
 		color: "bg-red-100 dark:bg-red-700",
 		textColor: "text-red-600",
 	},
-    {
-        name: "GCP",
-        color: "bg-blue-100 dark:bg-blue-700",
-        textColor: "text-blue-600",
-    },
+	{
+		name: "GCP",
+		color: "bg-blue-100 dark:bg-blue-700",
+		textColor: "text-blue-600",
+	},
 	{
 		name: "AWS",
 		color: "bg-gray-100 dark:bg-gray-700",
@@ -71,7 +71,6 @@ const defaultTechnologies = [
 		color: "bg-blue-100 dark:bg-blue-700",
 		textColor: "text-blue-600",
 	},
-    
 ];
 
 const TechStacksSlide = ({ technologies = defaultTechnologies }) => {

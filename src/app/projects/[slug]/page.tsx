@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: any) {
 	// const { elementRef: screenshotsRef, isIntersecting: screenshotsVisible } =
 	// 	useIntersectionObserver();
 
-	const { slug } = params;
+	const { slug } = await params;
 
 	const project = projects.find((p) => p.slug === slug);
 

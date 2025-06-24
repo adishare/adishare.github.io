@@ -92,14 +92,14 @@ export default function About() {
 	};
 
 	const awards = [
-        {
-            title: "Best Stunting Risk Management System",
+		{
+			title: "Best Stunting Risk Management System",
 			period: "Jun 2024",
 		},
-        {
-            title: "Hacktiv8 Bootcamp Graduate",
-            period: "Dec 2018",
-        },
+		{
+			title: "Hacktiv8 Bootcamp Graduate",
+			period: "Dec 2018",
+		},
 	];
 
 	const communityFeatures = [
@@ -425,7 +425,13 @@ export default function About() {
 								Accelerating Indonesian Digitalization
 							</h2>
 							<p className="text-muted-foreground leading-relaxed mb-8">
-								I founded MiCA, a modern deployment platform like Vercel but specifically designed for Indonesian developers and businesses. Our mission is to accelerate Indonesian developers to compete globally while modernizing Indonesia's digital landscape. We provide specialized B2B solutions, community-driven applications, and a comprehensive ecosystem that empowers Indonesian businesses to thrive in the digital economy.
+								I founded MiCA, a modern deployment platform like Vercel but
+								specifically designed for Indonesian developers and businesses.
+								Our mission is to accelerate Indonesian developers to compete
+								globally while modernizing Indonesia's digital landscape. We
+								provide specialized B2B solutions, community-driven
+								applications, and a comprehensive ecosystem that empowers
+								Indonesian businesses to thrive in the digital economy.
 							</p>
 
 							<div className="grid grid-cols-3 gap-8 mb-8">
@@ -443,7 +449,9 @@ export default function About() {
 								</div>
 								<div className="text-center">
 									<div className="font-clash text-3xl font-bold mb-1">50+</div>
-									<p className="text-muted-foreground text-sm">Community Apps</p>
+									<p className="text-muted-foreground text-sm">
+										Community Apps
+									</p>
 								</div>
 							</div>
 

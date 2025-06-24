@@ -1,9 +1,4 @@
-import {
-    ChevronDown,
-    Code,
-    Server,
-    Smartphone
-} from "lucide-react";
+import { ChevronDown, Code, Server, Smartphone } from "lucide-react";
 
 import { AnimatedSection } from "./ui/animated-section";
 import TechStacksSlide from "./TechStacksSlide";
