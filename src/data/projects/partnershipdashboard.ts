@@ -27,7 +27,7 @@ export const partnershipdashboard = {
 	},
 
 	roles: ["Fullstack Developer", "Frontend Developer", "Backend Developer"],
-	start_date: "2024-06-01",
+	start_date: "2020-06-01",
 	end_date: "2024-08-15",
 	team_size: 4,
 	team_compositions: [

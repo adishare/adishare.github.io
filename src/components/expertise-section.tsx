@@ -1,4 +1,9 @@
-import { ChevronDown, Code, Megaphone, Palette } from "lucide-react";
+import {
+    ChevronDown,
+    Code,
+    Server,
+    Smartphone
+} from "lucide-react";
 
 import { AnimatedSection } from "./ui/animated-section";
 import TechStacksSlide from "./TechStacksSlide";
@@ -13,25 +18,25 @@ export default function ExpertiseSection() {
 
 	const expertiseItems = [
 		{
-			id: "development",
+			id: "fullstack",
 			icon: Code,
-			title: "Development",
+			title: "Fullstack Development",
 			description:
-				"Full-stack development with modern frameworks including React, Next.js, Node.js, and TypeScript. Specialized in building scalable, performant web applications with clean, maintainable code.",
+				"End-to-end web development expertise covering frontend, backend, and database technologies. Proficient in modern frameworks like React, Next.js, Node.js, and TypeScript. Specialized in building scalable, performant web applications with clean, maintainable code and seamless user experiences.",
 		},
 		{
-			id: "design",
-			icon: Palette,
-			title: "UI/UX Design",
+			id: "mobile",
+			icon: Smartphone,
+			title: "Mobile App Development",
 			description:
-				"User-centered design approach focusing on creating intuitive, accessible, and visually compelling interfaces. Expertise in design systems, prototyping, and user research methodologies.",
+				"Cross-platform mobile application development using React Native cli and Expo. Focus on creating intuitive, high-performance mobile experiences with modern UI/UX patterns and seamless integration with backend services.",
 		},
 		{
-			id: "branding",
-			icon: Megaphone,
-			title: "Branding",
+			id: "devops",
+			icon: Server,
+			title: "DevOps",
 			description:
-				"Strategic brand development including visual identity, logo design, and brand guidelines. Creating cohesive brand experiences across digital and print mediums.",
+				"Infrastructure automation, CI/CD pipeline development, and cloud deployment strategies. Expertise in Docker, AWS, GCP, and other cloud platforms. Implementing monitoring, logging, and security best practices for scalable, reliable applications.",
 		},
 	];
 

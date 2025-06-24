@@ -16,8 +16,8 @@ export default function TestimonialsSection() {
 
 	const testimonials = [
 		{
-			name: "Aman Tyagi",
-			position: "UI/UX Designer @BrainAlive",
+			name: "John Doe",
+			position: "UI/UX Designer @Metranet",
 			image:
 				"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
 			content:
@@ -25,21 +25,12 @@ export default function TestimonialsSection() {
 			linkedinUrl: "#",
 		},
 		{
-			name: "Sarah Johnson",
+			name: "Featured Testimonial",
 			position: "Product Manager @TechCorp",
-			image:
-				"https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
-			content:
-				"Adi delivered an outstanding mobile application that exceeded our expectations. His attention to detail and technical expertise made the development process smooth and efficient. The final product was both beautiful and highly functional.",
-			linkedinUrl: "#",
-		},
-		{
-			name: "Michael Chen",
-			position: "CTO @StartupVenture",
 			image:
 				"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100",
 			content:
-				"Working with Adi was a game-changer for our startup. He transformed our vision into a scalable web platform that has been crucial to our growth. His problem-solving skills and dedication are truly remarkable.",
+				"Adi delivered an outstanding mobile application that exceeded our expectations. His attention to detail and technical expertise made the development process smooth and efficient. The final product was both beautiful and highly functional.",
 			linkedinUrl: "#",
 		},
 	];

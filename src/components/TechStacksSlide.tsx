@@ -32,7 +32,7 @@ const defaultTechnologies = [
 		textColor: "text-cyan-600",
 	},
 	{
-		name: "Angular",
+		name: "React Native",
 		color: "bg-red-100 dark:bg-red-900/20",
 		textColor: "text-red-600",
 	},
@@ -51,6 +51,27 @@ const defaultTechnologies = [
 		color: "bg-gray-100 dark:bg-gray-700",
 		textColor: "text-gray-600",
 	},
+	{
+		name: "Expo",
+		color: "bg-red-100 dark:bg-red-700",
+		textColor: "text-red-600",
+	},
+    {
+        name: "GCP",
+        color: "bg-blue-100 dark:bg-blue-700",
+        textColor: "text-blue-600",
+    },
+	{
+		name: "AWS",
+		color: "bg-gray-100 dark:bg-gray-700",
+		textColor: "text-gray-600",
+	},
+	{
+		name: "Docker",
+		color: "bg-blue-100 dark:bg-blue-700",
+		textColor: "text-blue-600",
+	},
+    
 ];
 
 const TechStacksSlide = ({ technologies = defaultTechnologies }) => {

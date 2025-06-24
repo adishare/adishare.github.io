@@ -25,27 +25,27 @@ export default function About() {
 
 	const experience = [
 		{
-			title: "Software Engineer",
-			company: "@OneShield Software",
-			period: "Aug 2022 — Present",
+			title: "Fullstack Developer",
+			company: "@Cazbox",
+			period: "Feb 2022 — Present",
 			icon: "🔹",
 		},
 		{
-			title: "Founder",
-			company: "@Design and Code",
-			period: "Jan 2021 — Present",
+			title: "Fullstack Developer",
+			company: "@IDL",
+			period: "Feb 2019 — Feb 2022",
 			icon: "⚪",
 		},
 		{
-			title: "Design Engineer",
-			company: "@BlackboxAI",
-			period: "Feb 2025 — Mar 2025",
+			title: "Mobile Developer",
+			company: "@Kampusku",
+			period: "Feb 2021 — Feb 2022",
 			icon: "⚫",
 		},
 		{
-			title: "UI/UX Designer",
-			company: "@SocialS",
-			period: "Aug 2022 — Sep 2023",
+			title: "Fullstack Developer",
+			company: "@MiCA",
+			period: "Mar 2025 — Present",
 			icon: "🔷",
 		},
 	];
@@ -92,48 +92,40 @@ export default function About() {
 	};
 
 	const awards = [
-		{
-			title: "Star Performer of the Year",
-			period: "MAY 2021",
+        {
+            title: "Best Stunting Risk Management System",
+			period: "Jun 2024",
 		},
-		{
-			title: "Best Beginner Hack",
-			period: "APR 2021",
-		},
-		{
-			title: "Sketch Webpage Contest Winner",
-			period: "NOV 2020",
-		},
-		{
-			title: "Best Space App Winner",
-			period: "SEP 2021",
-		},
+        {
+            title: "Hacktiv8 Bootcamp Graduate",
+            period: "Dec 2018",
+        },
 	];
 
 	const communityFeatures = [
 		{
-			title: "Mentoring",
+			title: "MiCA Platform",
 			description:
-				"Get connected with a mentor that will help you pave your career path.",
-			icon: "🎯",
+				"Modern deployment platform like Vercel, but with specialized solutions for Indonesian businesses and developers.",
+			icon: "🚀",
 		},
 		{
-			title: "Opportunities",
+			title: "B2B Solutions",
 			description:
-				"Get Internships and Job opportunities and gain experience while you learn.",
-			icon: "💼",
+				"Enterprise-grade solutions tailored for Indonesian businesses to accelerate their digital transformation journey.",
+			icon: "🏢",
 		},
 		{
-			title: "Free Resources",
+			title: "Developer Acceleration",
 			description:
-				"Get Free resources related to Designing and Development from the community.",
-			icon: "📚",
+				"Empowering Indonesian developers with modern tools and resources to compete globally in the tech industry.",
+			icon: "⚡",
 		},
 		{
-			title: "Help & Reviews",
+			title: "Community Apps",
 			description:
-				"Get your portfolio and projects reviewed by industry experts and mentors.",
-			icon: "🔍",
+				"Building a thriving ecosystem of community-driven applications and tools for the Indonesian tech community.",
+			icon: "🤝",
 		},
 	];
 
@@ -229,7 +221,7 @@ export default function About() {
 					<AnimatedSection animation="fade-right" className="space-y-2 w-full">
 						{experience.map((item, index) => (
 							<div
-								key={item.title}
+								key={index.toString()}
 								className="flex items-center justify-between py-2 border-b border-border last:border-b-0"
 							>
 								<div className="flex items-center">
@@ -426,38 +418,32 @@ export default function About() {
 						<div>
 							<div className="flex items-center mb-6">
 								<span className="text-accent text-sm font-medium tracking-wider">
-									✦ COMMUNITY WORK
+									✦ MICA PLATFORM
 								</span>
 							</div>
 							<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
-								Building a Tech Community
+								Accelerating Indonesian Digitalization
 							</h2>
 							<p className="text-muted-foreground leading-relaxed mb-8">
-								I founded Design & Code which is a global community with a
-								mission to connect designers and developers to create a happy
-								community eager to learn, innovate and grow together. We welcome
-								all designers and developers: beginners, intermediates, and
-								experts willing to learn together. We encourage sharing
-								resources and learning experiences, organizing events, and
-								providing feedback for our members to grow as they learn.
+								I founded MiCA, a modern deployment platform like Vercel but specifically designed for Indonesian developers and businesses. Our mission is to accelerate Indonesian developers to compete globally while modernizing Indonesia's digital landscape. We provide specialized B2B solutions, community-driven applications, and a comprehensive ecosystem that empowers Indonesian businesses to thrive in the digital economy.
 							</p>
 
 							<div className="grid grid-cols-3 gap-8 mb-8">
 								<div className="text-center">
-									<div className="font-clash text-3xl font-bold mb-1">5k+</div>
+									<div className="font-clash text-3xl font-bold mb-1">100+</div>
 									<p className="text-muted-foreground text-sm">
-										Community Members
+										Indonesian Businesses
 									</p>
 								</div>
 								<div className="text-center">
-									<div className="font-clash text-3xl font-bold mb-1">25+</div>
+									<div className="font-clash text-3xl font-bold mb-1">500+</div>
 									<p className="text-muted-foreground text-sm">
-										Events conducted
+										Developers Empowered
 									</p>
 								</div>
 								<div className="text-center">
-									<div className="font-clash text-3xl font-bold mb-1">4</div>
-									<p className="text-muted-foreground text-sm">Years</p>
+									<div className="font-clash text-3xl font-bold mb-1">50+</div>
+									<p className="text-muted-foreground text-sm">Community Apps</p>
 								</div>
 							</div>
 
@@ -465,7 +451,7 @@ export default function About() {
 								variant="outline"
 								className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
 							>
-								Join Community
+								Explore MiCA Platform
 							</Button>
 						</div>
 					</div>

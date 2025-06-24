@@ -54,7 +54,7 @@ export const micastudio = {
 	},
 
 	roles: ["Fullstack Developer", "Product Architect", "DevOps Engineer"],
-	start_date: "2024-01-01",
+	start_date: "2025-01-01",
 	end_date: undefined, // ongoing
 	team_size: 1,
 	team_compositions: [{ role: "Founder / Fullstack Engineer", count: 1 }],

@@ -33,7 +33,7 @@ export const dmsapp = {
 
 	roles: ["Mobile Developer", "Fullstack Developer", "UX Researcher"],
 	start_date: "2024-11-01",
-	end_date: "2025-02-10",
+	end_date: undefined, // ongoing
 	team_size: 5,
 	team_compositions: [
 		{ role: "Mobile Developer", count: 2 },

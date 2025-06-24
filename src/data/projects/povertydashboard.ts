@@ -33,8 +33,8 @@ export const povertydashboard = {
 	},
 
 	roles: ["Frontend Developer", "GIS Developer", "Fullstack Developer"],
-	start_date: "2024-03-01",
-	end_date: "2024-06-15",
+	start_date: "2025-03-01",
+	end_date: undefined, // ongoing
 	team_size: 4,
 	team_compositions: [
 		{ role: "Frontend Developer", count: 1 },

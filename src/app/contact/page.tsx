@@ -14,12 +14,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
 	const { elementRef: heroRef, isIntersecting: heroVisible } =
 		useIntersectionObserver();
 	const { elementRef: faqRef, isIntersecting: faqVisible } =
 		useIntersectionObserver();
+    const { toast } = useToast();
 
 	const [formData, setFormData] = useState({
 		fullName: "",
@@ -85,6 +87,12 @@ export default function Contact() {
 		e.preventDefault();
 		// Handle form submission
 		console.log("Form submitted:", formData);
+        // show toast info , currently not available and promt to send mail to adie.share@gmail.com or use whatsapp
+        toast({
+            title: "Currently not available",
+            description: "Please send mail to adie.share@gmail.com or use whatsapp +62812 1180 5303",
+            variant: "destructive",
+        })
 	};
 
 	const toggleFaq = (index: number) => {

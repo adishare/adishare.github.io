@@ -33,7 +33,7 @@ export const dmsdashboard = {
 		"UI/UX Designer",
 	],
 	start_date: "2024-10-01",
-	end_date: "2025-01-15",
+	end_date: undefined, // ongoing
 	team_size: 6,
 	team_compositions: [
 		{ role: "Frontend Developer", count: 2 },
@@ -43,8 +43,8 @@ export const dmsdashboard = {
 		{ role: "QA Engineer", count: 1 },
 	],
 
-	demo_link: "https://stunting-demo.mica.app",
-	repo_link: "https://github.com/micastudio/stunting-risk-mgmt",
+	demo_link: undefined, // private
+	repo_link: undefined, // private
 
 	screenshots: [
 		{
@@ -141,11 +141,11 @@ export const dmsdashboard = {
 	],
 
 	company: {
-		name: "MICA Studio",
-		url: "https://mica.app",
-		logo: "/logos/mica.svg",
+		name: "Cazbox",
+		url: "https://cazbox.id",
+		logo: "/logos/cazbox.svg",
 		description:
-			"A platform for building white-labeled SaaS apps in public sector innovation.",
+			"A platform for building white-labeled SaaS apps in Enterprise sector innovation.",
 	},
 
 	clients: [
@@ -162,10 +162,10 @@ export const dmsdashboard = {
 
 	recognitions: [
 		{
-			title: "Top 10 GovTech Innovations of 2025",
+			title: "Best Stunting Risk Management System",
 			description:
-				"Featured by GovID Awards for innovation in digital public health.",
-			date: "2025-04-01",
+				"Featured by Cazbox for innovation in digital public health.",
+			date: "2024-04-01",
 			issuer: "GovID Awards",
 		},
 	],

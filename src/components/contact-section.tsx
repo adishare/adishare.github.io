@@ -4,8 +4,10 @@ import { AnimatedSection } from "./ui/animated-section";
 import { Button } from "@/components/ui/button";
 import Threads from "./reactbits/Threads/Threads";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { useRouter } from "next/navigation";
 
 export default function ContactSection() {
+	const router = useRouter();
 	const { elementRef, isIntersecting } = useIntersectionObserver();
 
 	return (
@@ -34,6 +36,7 @@ export default function ContactSection() {
 						Let's create your next big idea.
 					</h2>
 					<Button
+						onClick={() => router.push("/contact")}
 						variant="outline"
 						className="px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg"
 					>

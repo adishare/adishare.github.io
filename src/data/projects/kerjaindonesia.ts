@@ -42,8 +42,8 @@ export const kerjaindonesia = {
 	},
 
 	roles: ["Fullstack Developer", "Backend Engineer", "Frontend Developer"],
-	start_date: "2023-05-01",
-	end_date: undefined, // ongoing
+	start_date: "2019-05-01",
+	end_date: "2021-05-01", // ongoing
 	team_size: 6,
 	team_compositions: [
 		{ role: "Fullstack Developer", count: 3 },
