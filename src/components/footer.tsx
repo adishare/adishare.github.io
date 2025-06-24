@@ -1,16 +1,28 @@
 "use client";
 
-import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import { AtSign, Github, Instagram, Linkedin, Mail } from "lucide-react";
 
 import { AnimatedSection } from "./ui/animated-section";
 
 export default function Footer() {
 	const socialLinks = [
-		{ icon: Linkedin, href: "#", label: "LinkedIn" },
-		{ icon: Github, href: "#", label: "GitHub" },
-		{ icon: Instagram, href: "#", label: "Instagram" },
-		{ icon: Mail, href: "#", label: "Email" },
-		{ icon: Twitter, href: "#", label: "Twitter" },
+		{
+			icon: Linkedin,
+			href: "https://www.linkedin.com/in/fathulqo",
+			label: "LinkedIn",
+		},
+		{ icon: Github, href: "https://github.com/adishare", label: "GitHub" },
+		{
+			icon: Instagram,
+			href: "https://www.instagram.com/adishare",
+			label: "Instagram",
+		},
+		{ icon: Mail, href: "mailto:adie.share@gmail.com", label: "Email" },
+		{
+			icon: AtSign,
+			href: "https://www.instagram.com/adishare",
+			label: "Twitter",
+		},
 	];
 
 	return (

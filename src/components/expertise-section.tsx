@@ -7,7 +7,9 @@ import { useState } from "react";
 
 export default function ExpertiseSection() {
 	const { elementRef, isIntersecting } = useIntersectionObserver();
-	const [openExpertise, setOpenExpertise] = useState<string | null>(null);
+	const [openExpertise, setOpenExpertise] = useState<string | null>(
+		"development",
+	);
 
 	const expertiseItems = [
 		{

@@ -5,8 +5,10 @@ import { ExternalLink, Hand } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Orb from "./reactbits/Orb/Orb";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { useRouter } from "next/navigation";
 
 export default function HeroSection() {
+	const router = useRouter();
 	const { elementRef, isIntersecting } = useIntersectionObserver();
 
 	return (
@@ -76,10 +78,16 @@ export default function HeroSection() {
 				>
 					<div className="grid grid-cols-2 sm:grid-cols-4 justify-center items-center gap-6 w-full lg:w-fit">
 						{[
-							{ label: "LINKEDIN", href: "#" },
-							{ label: "GITHUB", href: "#" },
-							{ label: "INSTAGRAM", href: "#" },
-							{ label: "GMAIL", href: "#" },
+							{
+								label: "LINKEDIN",
+								href: "https://www.linkedin.com/in/fathulqo",
+							},
+							{ label: "GITHUB", href: "https://github.com/adishare" },
+							{
+								label: "INSTAGRAM",
+								href: "https://www.instagram.com/adishare",
+							},
+							{ label: "GMAIL", href: "mailto:adie.share@gmail.com" },
 						].map(({ label, href }) => (
 							<a
 								key={label}
@@ -92,6 +100,7 @@ export default function HeroSection() {
 						))}
 					</div>
 					<Button
+						onClick={() => router.push("/about")}
 						variant="outline"
 						className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
 					>
