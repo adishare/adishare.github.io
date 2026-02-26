@@ -179,10 +179,23 @@ export default function Orb({
 		const container = ctnDom.current;
 		if (!container) return;
 
-		const renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
-		const gl = renderer.gl;
-		gl.clearColor(0, 0, 0, 0);
-		container.appendChild(gl.canvas);
+		const testCanvas = document.createElement("canvas");
+		const canWebGL =
+			!!testCanvas.getContext("webgl2") ||
+			!!testCanvas.getContext("webgl") ||
+			!!testCanvas.getContext("experimental-webgl");
+		if (!canWebGL) return;
+
+		let gl: any = null;
+		let renderer: Renderer | null = null;
+		try {
+			renderer = new Renderer({ alpha: true, premultipliedAlpha: false });
+			gl = renderer.gl;
+			gl.clearColor(0, 0, 0, 0);
+			container.appendChild(gl.canvas);
+		} catch {
+			return;
+		}
 
 		const geometry = new Triangle(gl);
 		const program = new Program(gl, {
@@ -211,7 +224,7 @@ export default function Orb({
 			const dpr = window.devicePixelRatio || 1;
 			const width = container.clientWidth;
 			const height = container.clientHeight;
-			renderer.setSize(width * dpr, height * dpr);
+			renderer!.setSize(width * dpr, height * dpr);
 			gl.canvas.style.width = width + "px";
 			gl.canvas.style.height = height + "px";
 			program.uniforms.iResolution.value.set(
@@ -272,7 +285,7 @@ export default function Orb({
 			}
 			program.uniforms.rot.value = currentRot;
 
-			renderer.render({ scene: mesh });
+			renderer!.render({ scene: mesh });
 		};
 		rafId = requestAnimationFrame(update);
 
@@ -281,8 +294,12 @@ export default function Orb({
 			window.removeEventListener("resize", resize);
 			container.removeEventListener("mousemove", handleMouseMove);
 			container.removeEventListener("mouseleave", handleMouseLeave);
-			container.removeChild(gl.canvas);
-			gl.getExtension("WEBGL_lose_context")?.loseContext();
+			if (gl) {
+				try {
+					container.removeChild(gl.canvas);
+				} catch {}
+				gl.getExtension?.("WEBGL_lose_context")?.loseContext?.();
+			}
 		};
 	}, [hue, hoverIntensity, rotateOnHover, forceHoverState]);
 

@@ -94,15 +94,37 @@ export default function SplashCursor({
 			TRANSPARENT,
 		};
 
-		const { gl, ext } = getWebGLContext(canvas);
-		if (!gl || !ext) return;
+		let gl: WebGLRenderingContext | WebGL2RenderingContext;
+		let ext: {
+			formatRGBA: { internalFormat: number; format: number } | null;
+			formatRG: { internalFormat: number; format: number } | null;
+			formatR: { internalFormat: number; format: number } | null;
+			halfFloatTexType: number;
+			supportLinearFiltering: boolean;
+		};
+		const ctx = getWebGLContext(canvas);
+		if (!ctx) return;
+		gl = ctx.gl;
+		ext = ctx.ext;
 
 		if (!ext.supportLinearFiltering) {
 			config.DYE_RESOLUTION = 256;
 			config.SHADING = false;
 		}
+		if (!ext.formatRGBA || !ext.formatRG || !ext.formatR) {
+			return;
+		}
 
-		function getWebGLContext(canvas: HTMLCanvasElement) {
+		function getWebGLContext(canvas: HTMLCanvasElement): {
+			gl: WebGLRenderingContext | WebGL2RenderingContext;
+			ext: {
+				formatRGBA: { internalFormat: number; format: number } | null;
+				formatRG: { internalFormat: number; format: number } | null;
+				formatR: { internalFormat: number; format: number } | null;
+				halfFloatTexType: number;
+				supportLinearFiltering: boolean;
+			};
+		} | null {
 			const params = {
 				alpha: true,
 				depth: false,
@@ -124,9 +146,7 @@ export default function SplashCursor({
 					)) as WebGL2RenderingContext | null;
 			}
 
-			if (!gl) {
-				throw new Error("Unable to initialize WebGL.");
-			}
+			if (!gl) return null;
 
 			const isWebGL2 = "drawBuffers" in gl;
 
@@ -886,9 +906,9 @@ export default function SplashCursor({
 			const dyeRes = getResolution(config.DYE_RESOLUTION!);
 
 			const texType = ext.halfFloatTexType;
-			const rgba = ext.formatRGBA;
-			const rg = ext.formatRG;
-			const r = ext.formatR;
+			const rgba = ext.formatRGBA!;
+			const rg = ext.formatRG!;
+			const r = ext.formatR!;
 			const filtering = ext.supportLinearFiltering ? gl.LINEAR : gl.NEAREST;
 			gl.disable(gl.BLEND);
 
