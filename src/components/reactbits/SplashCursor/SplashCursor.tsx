@@ -70,6 +70,21 @@ export default function SplashCursor({
 }: SplashCursorProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 
+	// Disable on Safari (macOS) and all iOS browsers
+	const isSafariOrIOS =
+		typeof navigator !== "undefined" &&
+		(() => {
+			const ua = navigator.userAgent;
+			const isIOS = /iPad|iPhone|iPod/.test(ua);
+			const isSafari =
+				/^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) &&
+				!/EdgiOS|CriOS|FxiOS/i.test(ua);
+			return isIOS || isSafari;
+		})();
+	if (isSafariOrIOS) {
+		return null;
+	}
+
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		if (!canvas) return;

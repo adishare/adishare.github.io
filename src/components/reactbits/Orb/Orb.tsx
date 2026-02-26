@@ -16,6 +16,21 @@ export default function Orb({
 }: OrbProps) {
 	const ctnDom = useRef<HTMLDivElement>(null);
 
+	// Disable on Safari (macOS) and all iOS browsers
+	const isSafariOrIOS =
+		typeof navigator !== "undefined" &&
+		(() => {
+			const ua = navigator.userAgent;
+			const isIOS = /iPad|iPhone|iPod/.test(ua);
+			const isSafari =
+				/^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) &&
+				!/EdgiOS|CriOS|FxiOS/i.test(ua);
+			return isIOS || isSafari;
+		})();
+	if (isSafariOrIOS) {
+		return <div ref={ctnDom} className="w-full h-full" />;
+	}
+
 	const vert = /* glsl */ `
     precision highp float;
     attribute vec2 position;

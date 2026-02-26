@@ -126,15 +126,43 @@ export default function Aurora(props: AuroraProps) {
 
 	const ctnDom = useRef<HTMLDivElement>(null);
 
+	// Disable on Safari (macOS) and all iOS browsers
+	const isSafariOrIOS =
+		typeof navigator !== "undefined" &&
+		(() => {
+			const ua = navigator.userAgent;
+			const isIOS = /iPad|iPhone|iPod/.test(ua);
+			const isSafari =
+				/^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) &&
+				!/EdgiOS|CriOS|FxiOS/i.test(ua);
+			return isIOS || isSafari;
+		})();
+	if (isSafariOrIOS) {
+		return <div ref={ctnDom} className="w-full h-full" />;
+	}
+
 	useEffect(() => {
 		const ctn = ctnDom.current;
 		if (!ctn) return;
 
-		const renderer = new Renderer({
-			alpha: true,
-			premultipliedAlpha: true,
-			antialias: true,
-		});
+		// Check WebGL capability
+		const testCanvas = document.createElement("canvas");
+		const canWebGL =
+			!!testCanvas.getContext("webgl2") ||
+			!!testCanvas.getContext("webgl") ||
+			!!testCanvas.getContext("experimental-webgl");
+		if (!canWebGL) return;
+
+		let renderer: Renderer;
+		try {
+			renderer = new Renderer({
+				alpha: true,
+				premultipliedAlpha: true,
+				antialias: true,
+			});
+		} catch {
+			return;
+		}
 		const gl = renderer.gl;
 		gl.clearColor(0, 0, 0, 0);
 		gl.enable(gl.BLEND);
