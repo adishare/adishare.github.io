@@ -6,7 +6,7 @@ A modern, responsive portfolio website built with Next.js, showcasing my work as
 
 - 🎨 Modern and clean UI design
 - 📱 Fully responsive layout
-- ⚡ Built with Next.js 15 and React 19
+- ⚡ Built with Next.js 16 and React 19
 - 🎭 Dark mode support
 - 🖼️ Project showcase with carousel
 - 🎯 SEO optimized
@@ -17,56 +17,57 @@ A modern, responsive portfolio website built with Next.js, showcasing my work as
 
 ## Tech Stack
 
-- **Framework:** Next.js 15
+- **Framework:** Next.js 16
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
-- **UI Components:** Radix UI
+- **UI Components:** shadcn/ui (built on Radix UI)
 - **Icons:** Lucide Icons
 - **Animations:** Framer Motion, GSAP
 - **Carousel:** Embla Carousel
-- **Form Handling:** React Hook Form
-- **Validation:** Zod
-- **State Management:** React Query
 - **Code Quality:** Biome
 
 ## Getting Started
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/adishare/portfolio.git
+   git clone https://github.com/adishare/adishare.github.io.git
+   cd adishare.github.io
    ```
 
 2. Install dependencies:
    ```bash
-   pnpm install
+   yarn install
    ```
 
 3. Run the development server:
    ```bash
-   pnpm run dev
+   yarn dev
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+Note: This project uses Yarn and includes a yarn.lock for GitHub Pages compatibility.
 
 ## Project Structure
 
 ```
 src/
 ├── app/                 # Next.js app directory
-├── components/          # React components
-├── data/               # Project data and content
-├── hooks/              # Custom React hooks
-├── lib/                # Utility functions
-└── styles/             # Global styles
+├── components/          # UI and reusable components
+├── data/                # Project data and content
+├── hooks/               # Custom React hooks
+└── lib/                 # Utility functions
 ```
 
 ## Available Scripts
 
-- `pnpm run dev` - Start development server
-- `pnpm run build` - Build for production
-- `pnpm run start` - Start production server
-- `pnpm run typecheck` - Run TypeScript type checking
-- `pnpm run lint-format` - Run linting and formatting
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn typecheck` - Run TypeScript type checking
+- `yarn lint` - Run Biome linter
+- `yarn format` - Format code with Biome
+- `yarn lint:fix:unsafe` - Auto-fix issues with unsafe rules
 
 ## Performance Optimizations
 
@@ -82,7 +83,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Contact
 
