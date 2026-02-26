@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
@@ -7,14 +7,32 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": [".next", "coverage", "node_modules", ".swc", "dist"]
+		"includes": [
+			"**",
+			"*.tsx",
+			"*.jsx",
+			"!**/.next",
+			"!**/dist",
+			"!**/out",
+			"!**/coverage",
+			"!**/node_modules",
+			"!**/.vscode",
+			"!**/geojsons",
+			"!**/public/maps",
+			"!**/.swc"
+		]
 	},
 	"formatter": {
 		"enabled": true,
 		"indentStyle": "tab"
 	},
-	"organizeImports": {
-		"enabled": true
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "off"
+			}
+		}
 	},
 	"linter": {
 		"enabled": true,
@@ -28,6 +46,13 @@
 				"noUndeclaredVariables": "error",
 				"noUnusedImports": "warn"
 			}
+		}
+	},
+	"css": {
+		"parser": {
+			"cssModules": false,
+			"allowWrongLineComments": true,
+			"tailwindDirectives": true
 		}
 	},
 	"javascript": {

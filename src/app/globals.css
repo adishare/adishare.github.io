@@ -59,7 +59,8 @@
 	}
 
 	.font-clash {
-		font-family: "Clash Display", var(--font-inter), "Inter", sans-serif !important;
+		font-family:
+			"Clash Display", var(--font-inter), "Inter", sans-serif !important;
 	}
 
 	html {
