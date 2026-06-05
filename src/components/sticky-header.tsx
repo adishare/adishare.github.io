@@ -12,7 +12,6 @@ import { useTheme } from "next-themes";
 export default function StickyHeader() {
 	const { theme, setTheme } = useTheme();
 	const pathname = usePathname();
-	const [activeSection, setActiveSection] = useState("home");
 	const [scrollY, setScrollY] = useState(0);
 	const [mounted, setMounted] = useState(false);
 
@@ -28,33 +27,19 @@ export default function StickyHeader() {
 		const handleScroll = () => {
 			const currentScrollY = window.scrollY;
 			setScrollY(currentScrollY);
-
-			const sections = ["home", "about", "projects", "contact"];
-			const current = sections.find((section) => {
-				const element = document.getElementById(section);
-				if (element) {
-					const rect = element.getBoundingClientRect();
-					return rect.top <= 100 && rect.bottom >= 100;
-				}
-				return false;
-			});
-			if (current) {
-				setActiveSection(current);
-			}
 		};
 
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
-	const scrollToSection = (sectionId: string) => {
-		const element = document.getElementById(sectionId);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth", block: "start" });
-		}
-	};
-
 	const scrollProgress = Math.min(scrollY / 100, 1);
+	const navItems = [
+		{ href: "/", label: "Home", icon: Home },
+		{ href: "/about", label: "About", icon: User },
+		{ href: "/projects", label: "Projects", icon: Briefcase },
+		{ href: "/contact", label: "Contact", icon: Mail },
+	];
 
 	return (
 		<header
@@ -80,133 +65,62 @@ export default function StickyHeader() {
 				>
 					{/* Logo */}
 					<div className="shrink-0">
-						<h1 className="text-2xl font-thin font-clash text-accent">aD</h1>
+						<Link
+							href="/"
+							aria-label="Go to homepage"
+							className="text-2xl font-thin font-clash text-accent"
+						>
+							aD
+						</Link>
 					</div>
 
 					{/* Navigation Links */}
 					<div className="flex items-center gap-4">
 						{/* Desktop Navigation */}
 						<div className="hidden md:flex items-baseline space-x-8">
-							<Link href="/">
-								<button
-									type="button"
+							{navItems.map(({ href, label }) => (
+								<Link
+									key={href}
+									href={href}
+									aria-current={pathname === href ? "page" : undefined}
 									className={`relative transition-colors ${
-										pathname === "/"
+										pathname === href
 											? "text-accent font-medium"
 											: "text-muted-foreground hover:text-foreground"
 									}`}
 								>
-									Home
-									{pathname === "/" && (
+									{label}
+									{pathname === href && (
 										<span className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent" />
 									)}
-								</button>
-							</Link>
-							<Link href="/about">
-								<button
-									type="button"
-									className={`relative transition-colors ${
-										pathname === "/about"
-											? "text-accent font-medium"
-											: "text-muted-foreground hover:text-foreground"
-									}`}
-								>
-									About
-									{pathname === "/about" && (
-										<span className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent" />
-									)}
-								</button>
-							</Link>
-							<Link href="/projects">
-								<button
-									type="button"
-									className={`relative transition-colors ${
-										pathname === "/projects"
-											? "text-accent font-medium"
-											: "text-muted-foreground hover:text-foreground"
-									}`}
-								>
-									Projects
-									{pathname === "/projects" && (
-										<span className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent" />
-									)}
-								</button>
-							</Link>
-							<Link href="/contact">
-								<button
-									type="button"
-									className={`relative transition-colors ${
-										pathname === "/contact"
-											? "text-accent font-medium"
-											: "text-muted-foreground hover:text-foreground"
-									}`}
-								>
-									Contact
-									{pathname === "/contact" && (
-										<span className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent" />
-									)}
-								</button>
-							</Link>
+								</Link>
+							))}
 						</div>
 
 						{/* Mobile Navigation */}
 						<div className="flex md:hidden items-center gap-2">
-							<Link href="/">
+							{navItems.map(({ href, label, icon: Icon }) => (
 								<Button
+									key={href}
+									asChild
 									variant="ghost"
 									size="icon"
 									className={cn(
 										"p-2 rounded-lg transition-colors",
-										pathname === "/"
+										pathname === href
 											? "bg-accent/10 text-accent"
 											: "text-muted-foreground hover:text-foreground hover:bg-muted",
 									)}
 								>
-									<Home className="h-5 w-5" />
+									<Link
+										href={href}
+										aria-label={label}
+										aria-current={pathname === href ? "page" : undefined}
+									>
+										<Icon className="h-5 w-5" />
+									</Link>
 								</Button>
-							</Link>
-							<Link href="/about">
-								<Button
-									variant="ghost"
-									size="icon"
-									className={cn(
-										"p-2 rounded-lg transition-colors",
-										pathname === "/about"
-											? "bg-accent/10 text-accent"
-											: "text-muted-foreground hover:text-foreground hover:bg-muted",
-									)}
-								>
-									<User className="h-5 w-5" />
-								</Button>
-							</Link>
-							<Link href="/projects">
-								<Button
-									variant="ghost"
-									size="icon"
-									className={cn(
-										"p-2 rounded-lg transition-colors",
-										pathname === "/projects"
-											? "bg-accent/10 text-accent"
-											: "text-muted-foreground hover:text-foreground hover:bg-muted",
-									)}
-								>
-									<Briefcase className="h-5 w-5" />
-								</Button>
-							</Link>
-							<Link href="/contact">
-								<Button
-									variant="ghost"
-									size="icon"
-									className={cn(
-										"p-2 rounded-lg transition-colors",
-										pathname === "/contact"
-											? "bg-accent/10 text-accent"
-											: "text-muted-foreground hover:text-foreground hover:bg-muted",
-									)}
-								>
-									<Mail className="h-5 w-5" />
-								</Button>
-							</Link>
+							))}
 						</div>
 
 						{/* Dark Mode Toggle */}
@@ -215,6 +129,7 @@ export default function StickyHeader() {
 						variant="ghost"
 						size="icon"
 						onClick={toggleTheme}
+						aria-label="Toggle color theme"
 						className="p-2 rounded-lg hover:bg-muted transition-colors"
 					>
 						{mounted ? (

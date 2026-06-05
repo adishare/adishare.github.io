@@ -55,10 +55,9 @@ export default function HeroSection() {
 							: "opacity-0 translate-y-8 scale-95"
 					}`}
 				>
-					Crafting <span className="text-accent">purpose driven</span>
-					<br />
-					<span className="text-accent">experiences</span> that inspire
-					<br />& engage.
+					Crafting <span className="text-accent">purpose driven</span> <br />
+					<span className="text-accent">experiences</span> that inspire <br />&
+					engage.
 				</h1>
 
 				{/* Description */}

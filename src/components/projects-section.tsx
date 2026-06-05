@@ -32,6 +32,8 @@ export default function ProjectsSection() {
 					<img
 						src={project.screenshots[0].src}
 						alt={project.screenshots[0].alt}
+						width={800}
+						height={600}
 						loading="lazy"
 						decoding="async"
 						className="mx-auto h-full w-full object-cover rounded-xl shadow-lg hover:scale-150 transition-transform duration-300"

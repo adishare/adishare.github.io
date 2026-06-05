@@ -4,6 +4,7 @@ import * as LucideIcons from "lucide-react";
 
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 
@@ -19,6 +20,39 @@ export const generateStaticParams = async () => {
 		slug: project.slug,
 	}));
 };
+
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+	const { slug } = await params;
+	const project = projects.find((p) => p.slug === slug);
+
+	if (!project) {
+		return {
+			title: "Project Not Found | Fathul Qorib Alaudit",
+		};
+	}
+
+	return {
+		title: `${project.title} | Fathul Qorib Alaudit`,
+		description: project.tagline,
+		alternates: {
+			canonical: `/projects/${project.slug}`,
+		},
+		openGraph: {
+			title: `${project.title} | Fathul Qorib Alaudit`,
+			description: project.tagline,
+			url: `/projects/${project.slug}`,
+			images: project.screenshots[0]
+				? [
+						{
+							url: project.screenshots[0].src,
+							alt: project.screenshots[0].alt,
+						},
+					]
+				: undefined,
+		},
+	};
+}
+
 export default async function ProjectPage({ params }: any) {
 	// const { elementRef: heroRef, isIntersecting: heroVisible } =
 	// 	useIntersectionObserver();
@@ -174,6 +208,10 @@ export default async function ProjectPage({ params }: any) {
 												<img
 													src={screenshot.src}
 													alt={screenshot.alt}
+													width={800}
+													height={600}
+													loading={idx === 0 ? "eager" : "lazy"}
+													decoding="async"
 													className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 												/>
 												<div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0" />
