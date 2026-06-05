@@ -32,6 +32,8 @@ export default function ProjectsSection() {
 					<img
 						src={project.screenshots[0].src}
 						alt={project.screenshots[0].alt}
+						loading="lazy"
+						decoding="async"
 						className="mx-auto h-full w-full object-cover rounded-xl shadow-lg hover:scale-150 transition-transform duration-300"
 					/>
 					<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
@@ -60,17 +62,18 @@ export default function ProjectsSection() {
 			>
 				<div className="flex items-center mb-6">
 					<span className="text-accent text-sm font-medium tracking-wider">
-						✦ MY WORK
+						MY WORK
 					</span>
 				</div>
 				<div className="flex justify-between items-end mb-16">
 					<div>
 						<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
-							Selected Projects
+							Selected Product Work
 						</h2>
 						<p className="text-muted-foreground max-w-2xl">
-							Here's a curated selection showcasing my expertise and the
-							achieved results.
+							A focused look at SaaS platforms, dashboards, and mobile products
+							where I improved speed, scalability, release flow, and the daily
+							experience of real users.
 						</p>
 					</div>
 					<Link href="/projects">

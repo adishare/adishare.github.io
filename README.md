@@ -4,16 +4,16 @@ A modern, responsive portfolio website built with Next.js, showcasing my work as
 
 ## Features
 
-- 🎨 Modern and clean UI design
-- 📱 Fully responsive layout
-- ⚡ Built with Next.js 16 and React 19
-- 🎭 Dark mode support
-- 🖼️ Project showcase with carousel
-- 🎯 SEO optimized
-- 🚀 Fast performance
-- 🎬 Smooth animations and transitions
-- 🔍 Intersection Observer for scroll animations
-- 🎮 Interactive UI elements
+- Modern and clean UI design
+- Fully responsive layout
+- Built with Next.js 16 and React 19
+- Dark mode support
+- Project showcase with carousel
+- SEO optimized
+- Fast performance
+- Smooth animations and transitions
+- Intersection Observer for scroll animations
+- Interactive UI elements
 
 ## Tech Stack
 

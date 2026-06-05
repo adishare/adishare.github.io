@@ -53,7 +53,7 @@ export default function Projects() {
 				>
 					<div className="flex items-center mb-6">
 						<span className="text-accent text-sm font-medium tracking-wider">
-							✦ MY WORK
+							MY WORK
 						</span>
 					</div>
 					<div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">

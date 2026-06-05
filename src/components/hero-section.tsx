@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Hand } from "lucide-react";
+import { Download, ExternalLink, Hand } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import Orb from "./reactbits/Orb/Orb";
@@ -10,6 +10,12 @@ import { useRouter } from "next/navigation";
 export default function HeroSection() {
 	const router = useRouter();
 	const { elementRef, isIntersecting } = useIntersectionObserver();
+	const resumeHref = "/Resume%20Fathul%20Qorib%20Alaudit%202026%20FE.pdf";
+	const highlights = [
+		{ value: "7 yrs", label: "Frontend engineering" },
+		{ value: "5M+", label: "LMS users supported" },
+		{ value: "35%", label: "Faster initial loads" },
+	];
 
 	return (
 		<section
@@ -36,7 +42,9 @@ export default function HeroSection() {
 					<span className="text-2xl mr-3">
 						<Hand className="w-6 h-6 text-accent animate-shake-hand" />
 					</span>
-					<span className="text-muted-foreground">Hey! It's me Adi.</span>
+					<span className="text-muted-foreground">
+						Hey! I'm Adi, a Senior Frontend Engineer.
+					</span>
 				</div>
 
 				{/* Main Headline */}
@@ -62,7 +70,7 @@ export default function HeroSection() {
 					}`}
 				>
 					<p className="text-lg text-muted-foreground leading-relaxed">
-						I work with brands globally to build pixel-perfect, engaging, and
+						I turn complex product requirements into pixel-perfect, engaging and
 						accessible digital experiences that drive results and achieve
 						business goals.
 					</p>
@@ -70,7 +78,7 @@ export default function HeroSection() {
 
 				{/* Social Links and CTA */}
 				<div
-					className={`flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 transition-all duration-700 ease-out delay-300 ${
+					className={`flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 transition-all duration-700 ease-out delay-500 ${
 						isIntersecting
 							? "opacity-100 translate-y-0"
 							: "opacity-0 translate-y-8"
@@ -99,13 +107,25 @@ export default function HeroSection() {
 							</a>
 						))}
 					</div>
-					<Button
-						onClick={() => router.push("/about")}
-						variant="outline"
-						className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
-					>
-						Know me better
-					</Button>
+					<div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+						<Button
+							onClick={() => router.push("/about")}
+							variant="outline"
+							className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+						>
+							View experience
+						</Button>
+						<Button
+							asChild
+							variant="outline"
+							className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+						>
+							<a href={resumeHref} target="_blank" rel="noreferrer">
+								<Download className="h-4 w-4" />
+								Resume
+							</a>
+						</Button>
+					</div>
 				</div>
 			</div>
 		</section>

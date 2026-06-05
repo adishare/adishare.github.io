@@ -3,6 +3,7 @@
 import {
 	AtSign,
 	ChevronDown,
+	Download,
 	Github,
 	Instagram,
 	Linkedin,
@@ -22,6 +23,7 @@ export default function Contact() {
 	const { elementRef: faqRef, isIntersecting: faqVisible } =
 		useIntersectionObserver();
 	const { toast } = useToast();
+	const resumeHref = "/Resume%20Fathul%20Qorib%20Alaudit%202026%20FE.pdf";
 
 	const [formData, setFormData] = useState({
 		fullName: "",
@@ -35,22 +37,22 @@ export default function Contact() {
 		{
 			question: "What is your current role?",
 			answer:
-				"I'm currently working as a Software Engineer at OneShield Software while also running my own design consultancy.",
+				"I'm currently a Senior Frontend Engineer at PT. Metranet (Telkom Group), focused on React, Next.js, TypeScript, SaaS platforms, dashboards, and React Native product workflows.",
 		},
 		{
-			question: "How much does it cost for a high performing website?",
+			question: "Are you available for US-based remote roles?",
 			answer:
-				"Project costs vary depending on scope, complexity, and timeline. I provide custom quotes after understanding your specific requirements and goals.",
+				"Yes. I'm actively open to remote frontend engineering opportunities with US-based product teams, especially roles involving SaaS, performance, design systems, dashboards, or mobile-adjacent workflows.",
 		},
 		{
-			question: "How long will the work take from start to finish?",
+			question: "What type of teams do you work best with?",
 			answer:
-				"Timeline depends on project complexity. Simple websites take 2-4 weeks, while complex applications can take 2-3 months. I'll provide a detailed timeline during our initial consultation.",
+				"I work well with product-minded engineering teams that value clear ownership, thoughtful UI details, typed code, async communication, and steady delivery over noisy process.",
 		},
 		{
-			question: "Are you available to join as full time?",
+			question: "Can you share your resume?",
 			answer:
-				"I'm currently focused on freelance and contract work, but I'm open to discussing full-time opportunities for the right role and company culture fit.",
+				"Yes. You can download the latest 2026 frontend resume from this portfolio, or email me directly at adie.share@gmail.com.",
 		},
 	];
 
@@ -117,11 +119,11 @@ export default function Contact() {
 						<div>
 							<div className="flex items-center mb-6">
 								<span className="text-accent text-sm font-medium tracking-wider">
-									✦ CONNECT WITH ME
+									CONNECT WITH ME
 								</span>
 							</div>
 							<h1 className="font-clash text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-12">
-								Let's start a project together
+								Let's talk about your frontend role
 							</h1>
 
 							<form onSubmit={handleSubmit} className="space-y-6">
@@ -194,7 +196,7 @@ export default function Contact() {
 							<div className="bg-card rounded-2xl p-8 shadow-lg border mb-8">
 								<div className="flex items-center mb-6">
 									<span className="text-accent text-sm font-medium tracking-wider">
-										✦ Available for work
+										Available for work
 									</span>
 								</div>
 
@@ -202,15 +204,30 @@ export default function Contact() {
 									<img
 										src="/adishare.JPG"
 										alt="Fathul Qorib Alaudit"
+										width={64}
+										height={64}
+										loading="lazy"
+										decoding="async"
 										className="w-16 h-16 rounded-full object-cover mb-4"
 									/>
 								</div>
 
 								<p className="text-muted-foreground leading-relaxed mb-6">
-									My inbox is always open. Whether you have a project or just
-									want to say Hi, I would love to hear from you. Feel free to
-									contact me and I'll get back to you.
+									I'm open to remote frontend engineering roles with teams that
+									need strong React, Next.js, TypeScript, SaaS, dashboard, and
+									performance experience. Email is the fastest way to reach me.
 								</p>
+
+								<Button
+									asChild
+									variant="outline"
+									className="px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 mb-6"
+								>
+									<a href={resumeHref} target="_blank" rel="noreferrer">
+										<Download className="h-4 w-4" />
+										Resume
+									</a>
+								</Button>
 
 								<div className="flex space-x-4">
 									{socialLinks.map(({ icon: Icon, href, label }) => (
@@ -242,7 +259,7 @@ export default function Contact() {
 						<div>
 							<div className="flex items-center mb-6">
 								<span className="text-accent text-sm font-medium tracking-wider">
-									✦ FAQS
+									FAQS
 								</span>
 							</div>
 							<h2 className="font-clash text-4xl md:text-5xl font-medium mb-8">

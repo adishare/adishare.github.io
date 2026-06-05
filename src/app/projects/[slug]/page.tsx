@@ -67,7 +67,7 @@ export default async function ProjectPage({ params }: any) {
 							{getIcon(project.icon_name)}
 						</div>
 						<span className="text-accent text-sm font-medium tracking-wider">
-							✦ {project.categories[0]}
+							{project.categories[0]}
 						</span>
 					</div>
 

@@ -1,13 +1,22 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import {
+	Award,
+	ChartNoAxesCombined,
+	Code2,
+	Download,
+	GitBranch,
+	GraduationCap,
+	Layers,
+	MessageSquare,
+	ShieldCheck,
+	Smartphone,
+} from "lucide-react";
 
 import { AnimatedSection } from "@/components/ui/animated-section";
 import { Button } from "@/components/ui/button";
-import CircularText from "@/components/reactbits/TextAnimations/CircularText";
 import TechStacksSlide from "@/components/TechStacksSlide";
 import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
-import { useState } from "react";
 
 export default function About() {
 	const { elementRef: heroRef, isIntersecting: heroVisible } =
@@ -21,111 +30,117 @@ export default function About() {
 		useIntersectionObserver();
 	const { elementRef: communityRef, isIntersecting: communityVisible } =
 		useIntersectionObserver();
-	const [currentStep, setCurrentStep] = useState(0);
+	const resumeHref = "/Resume%20Fathul%20Qorib%20Alaudit%202026%20FE.pdf";
 
-	const experience = [
+	const productSystems = [
 		{
-			title: "Fullstack Developer",
-			company: "@Cazbox",
-			period: "Feb 2022 — Present",
-			icon: "🔹",
+			title: "Enterprise dashboards",
+			icon: ChartNoAxesCombined,
+			description:
+				"Data-heavy admin surfaces, reporting flows, and operational tools built for teams that need clarity under pressure.",
+			metric: "5M+",
+			metricLabel: "users supported",
 		},
 		{
-			title: "Fullstack Developer",
-			company: "@IDL",
-			period: "Feb 2019 — Feb 2022",
-			icon: "⚪",
+			title: "Multi-tenant SaaS",
+			icon: Layers,
+			description:
+				"Frontend foundations for tenant-aware products with configurable roles, reports, branding, and product behavior.",
+			metric: "20+",
+			metricLabel: "tenant setups",
 		},
 		{
-			title: "Mobile Developer",
-			company: "@Kampusku",
-			period: "Feb 2021 — Feb 2022",
-			icon: "⚫",
+			title: "Mobile delivery",
+			icon: Smartphone,
+			description:
+				"React Native workflows, white-label UI systems, and release automation for teams shipping across platforms.",
+			metric: "60%",
+			metricLabel: "shorter release cycles",
+		},
+	];
+
+	const careerNotes = [
+		{
+			label: "Current focus",
+			value: "Senior frontend systems for SaaS, dashboards, and product teams",
 		},
 		{
-			title: "Fullstack Developer",
-			company: "@MiCA",
-			period: "Mar 2025 — Present",
-			icon: "🔷",
+			label: "Recent environment",
+			value:
+				"Telkom Group products, multi-tenant platforms, and mobile workflows",
+		},
+		{
+			label: "Side practice",
+			value:
+				"MiCA Studio experiments around tooling, deployment, and product ideas",
 		},
 	];
 
 	const processSteps = [
 		{
 			number: "01",
-			title: "Strategize",
+			title: "Product sense first",
 			description:
-				"To create something awesome, one must first talk about the details. Planning is essential.",
-			icon: "🎯",
+				"I start by understanding what users need to do, what the business needs to learn, and what the interface must make obvious.",
+			icon: MessageSquare,
 		},
 		{
 			number: "02",
-			title: "Wireframe",
+			title: "Shape the frontend system",
 			description:
-				"After hashing out the details of the website, it's easy to throw the ideas onto pen & paper.",
-			icon: "✏️",
+				"I turn unclear requirements into component boundaries, data contracts, state flow, and delivery slices the team can reason about.",
+			icon: GitBranch,
 		},
 		{
 			number: "03",
-			title: "Design",
+			title: "Ship with restraint",
 			description:
-				"The most fun part of all - adding pizzaz to the wireframes and bring it to life.",
-			icon: "🎨",
+				"I build typed, accessible, performance-aware UI without adding ceremony that slows the next iteration.",
+			icon: Code2,
 		},
 		{
 			number: "04",
-			title: "Development",
+			title: "Protect the release",
 			description:
-				"The design may be final but it needs to be functional and practical. Development is key.",
-			icon: "💻",
+				"I use review, checks, performance attention, and follow-up polish so the feature holds up after launch.",
+			icon: ShieldCheck,
 		},
 	];
-
-	const nextStep = () => {
-		setCurrentStep((prev) => (prev + 1) % processSteps.length);
-	};
-
-	const prevStep = () => {
-		setCurrentStep(
-			(prev) => (prev - 1 + processSteps.length) % processSteps.length,
-		);
-	};
 
 	const awards = [
 		{
 			title: "Best Stunting Risk Management System",
 			period: "Jun 2024",
+			description:
+				"Recognition for a healthtech platform supporting structured stunting risk management and reporting.",
+			icon: Award,
 		},
 		{
 			title: "Hacktiv8 Bootcamp Graduate",
 			period: "Dec 2018",
+			description:
+				"Completed intensive fullstack JavaScript training before moving into product engineering roles.",
+			icon: GraduationCap,
 		},
 	];
 
-	const communityFeatures = [
+	const collaborationNotes = [
 		{
-			title: "MiCA Platform",
-			description:
-				"Modern deployment platform like Vercel, but with specialized solutions for Indonesian businesses and developers.",
-			icon: "🚀",
+			title: "Readable decisions",
+			description: "Tradeoffs are written down, not hidden in chat history.",
 		},
 		{
-			title: "B2B Solutions",
-			description:
-				"Enterprise-grade solutions tailored for Indonesian businesses to accelerate their digital transformation journey.",
-			icon: "🏢",
+			title: "Calm ownership",
+			description: "I keep scope, risks, and follow-ups visible without drama.",
 		},
 		{
-			title: "Developer Acceleration",
-			description:
-				"Empowering Indonesian developers with modern tools and resources to compete globally in the tech industry.",
-			icon: "⚡",
+			title: "Good taste in details",
+			description: "The UI should feel considered, not merely complete.",
 		},
 		{
-			title: "Community Apps",
+			title: "Timezone-friendly flow",
 			description:
-				"Building a thriving ecosystem of community-driven applications and tools for the Indonesian tech community.",
-			icon: "🤝",
+				"Work should be easy to pick up, review, and continue async.",
 		},
 	];
 
@@ -149,7 +164,10 @@ export default function About() {
 						>
 							<img
 								src="/adishare.JPG"
-								alt="personal"
+								alt="Fathul Qorib Alaudit"
+								width={448}
+								height={448}
+								decoding="async"
 								className="rounded-t-full w-full max-w-md mx-auto shadow-2xl"
 							/>
 							{/* <div className="absolute -bottom-4 -right-4 bg-white"> */}
@@ -160,29 +178,25 @@ export default function About() {
 							className="relative lg:col-span-2"
 						>
 							<h1 className="font-clash text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-6">
-								A <span className="text-accent">creative developer</span>
-								<br />& digital designer
+								A <span className="text-accent">Senior Frontend Engineer</span>
+								<br />
+								for scalable product teams
 							</h1>
 							<p className="text-lg text-muted-foreground leading-relaxed mb-8">
-								I collaborate with brands globally to design impactful,
-								mission-focused websites that drive results and achieve business
-								goals.
+								I build frontend systems for SaaS platforms, dashboards, and
+								mobile products, with a focus on performance, maintainability,
+								and collaboration across product, design, and backend teams.
 							</p>
 							<Button
+								asChild
 								variant="outline"
 								className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
 							>
-								My Resume
+								<a href={resumeHref} target="_blank" rel="noreferrer">
+									<Download className="h-4 w-4" />
+									My Resume
+								</a>
 							</Button>
-							<div className="group absolute right-16 -top-20 grid aspect-square h-fit  place-content-center rounded-full shadow  -z-10 opacity-40">
-								<div className="relative leading-none font-normal uppercase bg-white/50 dark:bg-black p-10 rounded-full">
-									<CircularText
-										text="• LET'S TALK • LET'S TALK"
-										spinDuration={30}
-										className="relative leading-none font-normal uppercase size-36 text-accent"
-									/>
-								</div>
-							</div>
 						</AnimatedSection>
 					</div>
 				</div>
@@ -193,59 +207,82 @@ export default function About() {
 				<TechStacksSlide />
 			</div>
 
-			{/* Experience Section */}
+			{/* Product Systems Section */}
 			<section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
 				<div
 					ref={experienceRef}
-					className={`transition-all duration-800 ease-out flex gap-8 flex-col md:flex-row ${
+					className={`transition-all duration-800 ease-out ${
 						experienceVisible
 							? "opacity-100 translate-y-0"
 							: "opacity-0 translate-y-8"
 					}`}
 				>
-					<AnimatedSection animation="fade-left" delay={1} className="max-w-sm">
-						<div className="flex items-center mb-6">
-							<span className="text-accent text-sm font-medium tracking-wider">
-								✦ WORK HISTORY
-							</span>
+					<AnimatedSection animation="fade-up">
+						<div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-14">
+							<div className="lg:col-span-7">
+								<p className="text-accent text-sm font-medium tracking-wider mb-5">
+									PRODUCT SYSTEMS
+								</p>
+								<h2 className="font-clash text-4xl md:text-6xl font-medium leading-tight">
+									I build the interface layer where complex products become
+									usable.
+								</h2>
+							</div>
+							<p className="lg:col-span-5 text-muted-foreground leading-relaxed text-lg">
+								Instead of repeating my resume here, this page highlights the
+								product surfaces I have spent the most time shaping: dashboards,
+								multi-tenant SaaS, and mobile delivery systems.
+							</p>
 						</div>
-						<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
-							Experience
-						</h2>
-						<p className="text-muted-foreground mb-16 max-w-2xl">
-							I have worked with some of the most innovative industry leaders to
-							help build their top-notch products.
-						</p>
-					</AnimatedSection>
 
-					<AnimatedSection animation="fade-right" className="space-y-2 w-full">
-						{experience.map((item, index) => (
-							<div
-								key={index.toString()}
-								className="flex items-center justify-between py-2 border-b border-border last:border-b-0"
-							>
-								<div className="flex items-center">
-									<span className="text-2xl mr-4">{item.icon}</span>
-									<div>
-										<h3 className="text-lg font-medium">{item.title}</h3>
-										<p className="text-muted-foreground text-xs">
-											{item.company}
+						<div className="grid grid-cols-1 lg:grid-cols-3 border-y border-border">
+							{productSystems.map((system, index) => {
+								const Icon = system.icon;
+
+								return (
+									<div
+										key={system.title}
+										className={`py-8 lg:p-8 ${
+											index > 0 ? "lg:border-l lg:border-border" : ""
+										}`}
+									>
+										<div className="flex items-center justify-between mb-10">
+											<Icon className="h-6 w-6 text-accent" />
+											<span className="font-clash text-5xl font-medium text-accent">
+												{system.metric}
+											</span>
+										</div>
+										<h3 className="font-clash text-3xl font-medium mb-4">
+											{system.title}
+										</h3>
+										<p className="text-muted-foreground leading-relaxed mb-8">
+											{system.description}
+										</p>
+										<p className="text-sm uppercase tracking-wider text-muted-foreground">
+											{system.metricLabel}
 										</p>
 									</div>
+								);
+							})}
+						</div>
+
+						<div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-b border-border">
+							{careerNotes.map((note) => (
+								<div key={note.label} className="py-6 md:pr-8">
+									<p className="text-sm uppercase tracking-wider text-accent mb-2">
+										{note.label}
+									</p>
+									<p className="text-muted-foreground leading-relaxed">
+										{note.value}
+									</p>
 								</div>
-								<span className="text-foreground text-sm">{item.period}</span>
-							</div>
-						))}
-						<div className="mt-12 text-center">
-							<Button variant="ghost" className="text-accent hover:underline">
-								Show More
-							</Button>
+							))}
 						</div>
 					</AnimatedSection>
 				</div>
 			</section>
 
-			{/* Design Process Section */}
+			{/* Engineering Process Section */}
 			<AnimatedSection
 				animation="fade-up"
 				className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24"
@@ -258,100 +295,48 @@ export default function About() {
 							: "opacity-0 translate-y-8"
 					}`}
 				>
-					<div className="flex items-center mb-6">
-						<span className="text-accent text-sm font-medium tracking-wider">
-							✦ STEPS I FOLLOW
-						</span>
-					</div>
-					<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
-						My Design Process
-					</h2>
-					<p className="text-muted-foreground mb-16 max-w-2xl">
-						I have worked with some of the most innovative industry leaders to
-						help build their top-notch products.
-					</p>
+					<div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+						<div className="lg:col-span-4">
+							<p className="text-accent text-sm font-medium tracking-wider mb-5">
+								HOW I WORK
+							</p>
+							<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
+								A calm path from ambiguity to shipped UI.
+							</h2>
+						</div>
 
-					<div className="relative">
-						{/* Mobile/Tablet View - Slider */}
-						<div className="lg:hidden overflow-hidden">
-							<div
-								className="flex transition-transform duration-300 ease-in-out"
-								style={{ transform: `translateX(-${currentStep * 100}%)` }}
-							>
-								{processSteps.map((step, index) => (
+						<div className="lg:col-span-8">
+							{processSteps.map((step) => {
+								const Icon = step.icon;
+
+								return (
 									<div
 										key={step.title}
-										className="w-full flex-shrink-0 text-center px-4"
+										className="grid grid-cols-[auto_1fr] gap-6 border-t border-border py-8 first:border-t-0 first:pt-0"
 									>
-										<div className="w-20 h-20 bg-muted rounded-2xl flex items-center justify-center mb-6 mx-auto">
-											<span className="text-3xl">{step.icon}</span>
+										<div className="flex flex-col items-center gap-4">
+											<span className="font-clash text-sm text-accent">
+												{step.number}
+											</span>
+											<Icon className="h-5 w-5 text-muted-foreground" />
 										</div>
-										<h3 className="font-clash text-2xl font-semibold mb-4">
-											{step.number}. {step.title}
-										</h3>
-										<p className="text-muted-foreground text-lg leading-relaxed max-w-md mx-auto">
-											{step.description}
-										</p>
+										<div>
+											<h3 className="font-clash text-3xl font-medium mb-3">
+												{step.title}
+											</h3>
+											<p className="text-muted-foreground leading-relaxed max-w-2xl">
+												{step.description}
+											</p>
+										</div>
 									</div>
-								))}
-							</div>
-						</div>
-
-						{/* Desktop View - Grid */}
-						<div className="hidden lg:grid grid-cols-4 gap-8">
-							{processSteps.map((step) => (
-								<div key={step.title} className="text-center">
-									<div className="w-20 h-20 bg-muted rounded-2xl flex items-center justify-center mb-6 mx-auto">
-										<span className="text-3xl">{step.icon}</span>
-									</div>
-									<h3 className="font-clash text-2xl font-semibold mb-4">
-										{step.number}. {step.title}
-									</h3>
-									<p className="text-muted-foreground text-lg leading-relaxed">
-										{step.description}
-									</p>
-								</div>
-							))}
-						</div>
-
-						{/* Navigation - Only show on mobile/tablet */}
-						<div className="lg:hidden flex justify-center items-center mt-12 space-x-4">
-							<Button
-								variant="ghost"
-								size="icon"
-								onClick={prevStep}
-								className="rounded-full border border-border hover:bg-muted"
-							>
-								<ChevronLeft className="h-5 w-5" />
-							</Button>
-
-							<div className="flex space-x-2">
-								{processSteps.map((_, index) => (
-									<button
-										type="button"
-										key={index}
-										onClick={() => setCurrentStep(index)}
-										className={`w-2 h-2 rounded-full transition-colors ${
-											index === currentStep ? "bg-accent" : "bg-muted"
-										}`}
-									/>
-								))}
-							</div>
-
-							<Button
-								variant="ghost"
-								size="icon"
-								onClick={nextStep}
-								className="rounded-full border border-border hover:bg-muted"
-							>
-								<ChevronRight className="h-5 w-5" />
-							</Button>
+								);
+							})}
 						</div>
 					</div>
 				</div>
 			</AnimatedSection>
 
-			{/* Awards Section */}
+			{/* Recognition Section */}
 			<AnimatedSection
 				animation="fade-up"
 				className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24"
@@ -364,30 +349,42 @@ export default function About() {
 							: "opacity-0 translate-y-8"
 					}`}
 				>
-					<div className="flex flex-col items-center ">
-						<div className="text-accent text-sm font-medium tracking-wider mb-6 self-start">
-							✦ AWARDS
-						</div>
-						<h2 className="font-clash text-4xl md:text-5xl font-medium mb-16">
-							Awards & Recognition
+					<div className="lg:col-span-1">
+						<p className="text-accent text-sm font-medium tracking-wider mb-5">
+							SIGNALS
+						</p>
+						<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
+							Small proof, honestly framed.
 						</h2>
 					</div>
 
-					<div className="space-y-4 lg:col-span-2">
-						{awards.map((award, index) => (
-							<div
-								key={award.title}
-								className="flex justify-between items-center py-1 border-b border-border last:border-b-0"
-							>
-								<h3 className="text-lg font-medium">{award.title}</h3>
-								<span className="text-foreground text-sm">{award.period}</span>
-							</div>
-						))}
+					<div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+						{awards.map((award) => {
+							const Icon = award.icon;
+
+							return (
+								<div
+									key={award.title}
+									className="relative border-l border-border pl-6 py-2"
+								>
+									<Icon className="absolute -left-3 top-2 h-6 w-6 bg-background p-1 text-accent" />
+									<p className="text-sm uppercase tracking-wider text-muted-foreground mb-4">
+										{award.period}
+									</p>
+									<h3 className="font-clash text-2xl font-medium mb-3">
+										{award.title}
+									</h3>
+									<p className="text-muted-foreground leading-relaxed">
+										{award.description}
+									</p>
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</AnimatedSection>
 
-			{/* Community Section */}
+			{/* Remote Collaboration Section */}
 			<AnimatedSection
 				animation="fade-up"
 				className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24"
@@ -400,67 +397,29 @@ export default function About() {
 							: "opacity-0 translate-y-8"
 					}`}
 				>
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-							{communityFeatures.map((feature, index) => (
-								<div key={feature.title} className="text-center">
-									<div className="w-16 h-16 bg-muted rounded-2xl flex items-center justify-center mb-4 mx-auto">
-										<span className="text-2xl">{feature.icon}</span>
+					<div className="border-y border-border py-12">
+						<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+							<div className="lg:col-span-5">
+								<p className="text-accent text-sm font-medium tracking-wider mb-5">
+									REMOTE STYLE
+								</p>
+								<h2 className="font-clash text-4xl md:text-6xl font-medium leading-tight">
+									Clear enough for async, polished enough for users.
+								</h2>
+							</div>
+
+							<div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+								{collaborationNotes.map((note) => (
+									<div key={note.title}>
+										<h3 className="font-clash text-2xl font-medium mb-3">
+											{note.title}
+										</h3>
+										<p className="text-muted-foreground leading-relaxed">
+											{note.description}
+										</p>
 									</div>
-									<h3 className="font-semibold mb-3">{feature.title}</h3>
-									<p className="text-muted-foreground text-sm leading-relaxed">
-										{feature.description}
-									</p>
-								</div>
-							))}
-						</div>
-
-						<div>
-							<div className="flex items-center mb-6">
-								<span className="text-accent text-sm font-medium tracking-wider">
-									✦ MICA PLATFORM
-								</span>
+								))}
 							</div>
-							<h2 className="font-clash text-4xl md:text-5xl font-medium mb-6">
-								Accelerating Indonesian Digitalization
-							</h2>
-							<p className="text-muted-foreground leading-relaxed mb-8">
-								I founded MiCA, a modern deployment platform like Vercel but
-								specifically designed for Indonesian developers and businesses.
-								Our mission is to accelerate Indonesian developers to compete
-								globally while modernizing Indonesia's digital landscape. We
-								provide specialized B2B solutions, community-driven
-								applications, and a comprehensive ecosystem that empowers
-								Indonesian businesses to thrive in the digital economy.
-							</p>
-
-							<div className="grid grid-cols-3 gap-8 mb-8">
-								<div className="text-center">
-									<div className="font-clash text-3xl font-bold mb-1">100+</div>
-									<p className="text-muted-foreground text-sm">
-										Indonesian Businesses
-									</p>
-								</div>
-								<div className="text-center">
-									<div className="font-clash text-3xl font-bold mb-1">500+</div>
-									<p className="text-muted-foreground text-sm">
-										Developers Empowered
-									</p>
-								</div>
-								<div className="text-center">
-									<div className="font-clash text-3xl font-bold mb-1">50+</div>
-									<p className="text-muted-foreground text-sm">
-										Community Apps
-									</p>
-								</div>
-							</div>
-
-							<Button
-								variant="outline"
-								className="px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
-							>
-								Explore MiCA Platform
-							</Button>
 						</div>
 					</div>
 				</div>

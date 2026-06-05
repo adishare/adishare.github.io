@@ -9,7 +9,8 @@
 		"typecheck": "tsc --noEmit",
 		"lint": "biome check .",
 		"format": "biome format --write .",
-		"lint:fix:unsafe": "biome check --write --unsafe ."
+		"lint:fix:unsafe": "biome check --write --unsafe .",
+		"knip": "knip"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.2.3",
@@ -20,32 +21,35 @@
 		"embla-carousel": "8.6.0",
 		"embla-carousel-autoplay": "^8.6.0",
 		"embla-carousel-react": "^8.6.0",
-		"framer-motion": "^12.17.3",
-		"gsap": "^3.13.0",
-		"lucide-react": "^0.575.0",
-		"next": "16.1.6",
+		"framer-motion": "^12.40.0",
+		"lucide-react": "^1.17.0",
+		"next": "16.2.7",
 		"next-themes": "^0.4.6",
 		"nextjs-toploader": "^3.8.16",
 		"ogl": "^1.0.11",
-		"react": "19.2.4",
-		"react-dom": "19.2.4",
-		"tailwind-merge": "^3.3.1",
+		"react": "19.2.7",
+		"react-dom": "19.2.7",
+		"tailwind-merge": "^3.6.0",
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.4",
+		"@biomejs/biome": "2.4.16",
 		"@tailwindcss/typography": "^0.5.15",
-		"@types/node": "^25.3.1",
-		"@types/react": "19.2.14",
+		"@types/node": "^25.9.1",
+		"@types/react": "19.2.16",
 		"@types/react-dom": "19.2.3",
-		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.47",
+		"autoprefixer": "^10.5.0",
+		"knip": "^6.15.0",
+		"postcss": "^8.5.15",
 		"tailwindcss": "^3.4.17",
-		"tsx": "^4.19.1",
-		"typescript": "^5"
+		"typescript": "^6.0.3"
 	},
 	"overrides": {
 		"@types/react": "19.2.14",
+		"@types/react-dom": "19.2.3"
+	},
+	"resolutions": {
+		"@types/react": "19.2.16",
 		"@types/react-dom": "19.2.3"
 	}
 }

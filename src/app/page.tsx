@@ -5,7 +5,7 @@ import ExpertiseSection from "@/components/expertise-section";
 import HeroSection from "@/components/hero-section";
 import HomeVelocity from "./HomeVelocity";
 import ProjectsSection from "@/components/projects-section";
-import TestimonialsSection from "@/components/testimonials-section";
+import RemoteTeamSection from "@/components/remote-team-section";
 
 export default function Home() {
 	return (
@@ -16,7 +16,7 @@ export default function Home() {
 				<AboutSection />
 				<ProjectsSection />
 				<ExpertiseSection />
-				<TestimonialsSection />
+				<RemoteTeamSection />
 			</main>
 		</div>
 	);

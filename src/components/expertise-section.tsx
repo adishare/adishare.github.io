@@ -13,25 +13,25 @@ export default function ExpertiseSection() {
 
 	const expertiseItems = [
 		{
-			id: "fullstack",
+			id: "frontend",
 			icon: Code,
-			title: "Fullstack Development",
+			title: "Frontend Architecture",
 			description:
-				"End-to-end web development expertise covering frontend, backend, and database technologies. Proficient in modern frameworks like React, Next.js, Node.js, and TypeScript. Specialized in building scalable, performant web applications with clean, maintainable code and seamless user experiences.",
+				"Designing scalable React, Next.js, and TypeScript frontends with modular component systems, typed data flows, and maintainable UI patterns for SaaS and enterprise products.",
 		},
 		{
-			id: "mobile",
+			id: "performance",
 			icon: Smartphone,
-			title: "Mobile App Development",
+			title: "Product Performance",
 			description:
-				"Cross-platform mobile application development using React Native cli and Expo. Focus on creating intuitive, high-performance mobile experiences with modern UI/UX patterns and seamless integration with backend services.",
+				"Improving Core Web Vitals, bundle size, dashboard rendering, state caching, lazy loading, and data-heavy user interfaces so complex products stay fast under real user traffic.",
 		},
 		{
-			id: "devops",
+			id: "delivery",
 			icon: Server,
-			title: "DevOps",
+			title: "Release Engineering",
 			description:
-				"Infrastructure automation, CI/CD pipeline development, and cloud deployment strategies. Expertise in Docker, AWS, GCP, and other cloud platforms. Implementing monitoring, logging, and security best practices for scalable, reliable applications.",
+				"Supporting predictable delivery with CI/CD, Dockerized environments, Fastlane mobile automation, code review standards, and frontend quality practices that reduce post-release bugs.",
 		},
 	];
 
@@ -53,7 +53,7 @@ export default function ExpertiseSection() {
 					<div>
 						<div className="flex items-center mb-6">
 							<span className="text-accent text-sm font-medium tracking-wider">
-								✦ SPECIALITY
+								SPECIALITY
 							</span>
 						</div>
 						<h2 className="font-clash text-4xl md:text-5xl font-medium mb-12">
@@ -106,6 +106,10 @@ export default function ExpertiseSection() {
 						<img
 							src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400"
 							alt="Modern developer workspace with laptop showing code"
+							width={600}
+							height={400}
+							loading="lazy"
+							decoding="async"
 							className="rounded-2xl shadow-2xl w-full h-auto mb-12"
 						/>
 					</div>

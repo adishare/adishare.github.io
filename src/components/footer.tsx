@@ -1,6 +1,6 @@
 "use client";
 
-import { AtSign, Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { AtSign, Github, Instagram, Linkedin } from "lucide-react";
 
 import { AnimatedSection } from "./ui/animated-section";
 
@@ -17,12 +17,7 @@ export default function Footer() {
 			href: "https://www.instagram.com/adishare",
 			label: "Instagram",
 		},
-		{ icon: Mail, href: "mailto:adie.share@gmail.com", label: "Email" },
-		{
-			icon: AtSign,
-			href: "https://www.instagram.com/adishare",
-			label: "Twitter",
-		},
+		{ icon: AtSign, href: "mailto:adie.share@gmail.com", label: "Email" },
 	];
 
 	return (
@@ -31,7 +26,7 @@ export default function Footer() {
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex flex-col md:flex-row justify-between items-center">
 						<p className="text-muted-foreground text-sm mb-4 md:mb-0">
-							© 2025 Fathul Qorib Alaudit. All rights reserved.
+							© 2026 Fathul Qorib Alaudit. All rights reserved.
 						</p>
 						<div className="flex space-x-6">
 							{socialLinks.map(({ icon: Icon, href, label }) => (

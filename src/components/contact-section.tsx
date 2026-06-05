@@ -29,11 +29,11 @@ export default function ContactSection() {
 				>
 					<div className="flex items-center justify-center mb-6">
 						<span className="text-accent text-sm font-medium tracking-wider">
-							✦ Available for work
+							Available for work
 						</span>
 					</div>
 					<h2 className="font-clash text-4xl md:text-7xl font-medium mb-12 max-w-3xl mx-auto leading-tight">
-						Let's create your next big idea.
+						Need a frontend engineer for your product team?
 					</h2>
 					<Button
 						onClick={() => router.push("/contact")}

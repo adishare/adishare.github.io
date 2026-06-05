@@ -3,9 +3,8 @@ import "./globals.css";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 import { Inter } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import React from "react";
-import SplashCursor from "@/components/reactbits/SplashCursor/SplashCursor";
 import StickyHeader from "@/components/sticky-header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -17,48 +16,49 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: "adishare | Fullstack Developer",
+	title: "Fathul Qorib Alaudit | Senior Frontend Engineer",
 	description:
-		"Portfolio and showcase of my work as a fullstack developer. Explore my projects, expertise, and get in touch for collaborations.",
+		"Senior Frontend Engineer portfolio focused on React, Next.js, TypeScript, SaaS platforms, performance optimization, dashboards, and remote product engineering.",
 	keywords: [
 		"adishare",
 		"Fathul Qorib Alaudit",
 		"portfolio",
-		"fullstack developer",
+		"senior frontend engineer",
+		"remote frontend developer",
 		"web development",
 		"frontend developer",
 		"UI/UX",
 		"mobile developer",
 		"react developer",
 		"nextjs developer",
-		"nodejs developer",
 		"tailwindcss developer",
 		"typescript developer",
+		"saas frontend engineer",
 	],
-	authors: [{ name: "adishare" }],
+	authors: [{ name: "Fathul Qorib Alaudit" }],
 	creator: "adishare",
 	openGraph: {
 		type: "website",
 		locale: "en_US",
 		url: "https://adishare.github.io",
-		title: "adishare | Fullstack Developer",
+		title: "Fathul Qorib Alaudit | Senior Frontend Engineer",
 		description:
-			"Portfolio and showcase of my work as a fullstack developer. Explore my projects, expertise, and get in touch for collaborations.",
+			"React, Next.js, and TypeScript portfolio for SaaS, dashboards, performance optimization, and remote frontend product engineering.",
 		siteName: "adishare",
 		images: [
 			{
 				url: "https://adishare.github.io/og-image.jpg", // Add your OG image
 				width: 1200,
 				height: 630,
-				alt: "adishare - Fullstack Developer Portfolio",
+				alt: "Fathul Qorib Alaudit - Senior Frontend Engineer Portfolio",
 			},
 		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "adishare | Fullstack Developer",
+		title: "Fathul Qorib Alaudit | Senior Frontend Engineer",
 		description:
-			"Portfolio and showcase of my work as a fullstack developer. Explore my projects, expertise, and get in touch for collaborations.",
+			"React, Next.js, and TypeScript portfolio for SaaS, dashboards, performance optimization, and remote frontend product engineering.",
 		creator: "@adishare",
 		images: ["https://adishare.github.io/twitter-image.jpg"], // Add your Twitter image
 	},
@@ -80,15 +80,6 @@ export const metadata: Metadata = {
 	applicationName: "adishare Portfolio",
 	generator: "Next.js",
 	referrer: "origin-when-cross-origin",
-	// themeColor: [
-	// 	{ media: "(prefers-color-scheme: light)", color: "white" },
-	// 	{ media: "(prefers-color-scheme: dark)", color: "black" },
-	// ],
-	// viewport: {
-	// 	width: "device-width",
-	// 	initialScale: 1,
-	// 	maximumScale: 1,
-	// },
 	icons: {
 		icon: "/favicon.ico",
 		shortcut: "/favicon.png",
@@ -100,28 +91,39 @@ export const metadata: Metadata = {
 	// },
 };
 
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 5,
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "#f4f5f6" },
+		{ media: "(prefers-color-scheme: dark)", color: "#101014" },
+	],
+};
+
 // Add JSON-LD structured data
 const jsonLd = {
 	"@context": "https://schema.org",
 	"@type": "Person",
 	name: "Fathul Qorib Alaudit",
 	url: "https://adishare.github.io",
-	jobTitle: "Fullstack Developer",
+	jobTitle: "Senior Frontend Engineer",
 	sameAs: [
 		"https://github.com/adishare",
 		"https://twitter.com/adishare",
-		"https://www.linkedin.com/in/fathulqorib",
+		"https://www.linkedin.com/in/fathulqo",
 		"https://www.instagram.com/adishare",
 		"https://www.facebook.com/adishare",
 	],
 	knowsAbout: [
-		"Web Development",
+		"Frontend Engineering",
 		"React",
 		"Next.js",
-		"Node.js",
 		"TypeScript",
 		"TailwindCSS",
-		"UI/UX Design",
+		"SaaS Platforms",
+		"Performance Optimization",
+		"React Native",
 	],
 };
 
@@ -133,6 +135,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				<link rel="preconnect" href="https://api.fontshare.com" />
 				<link
 					href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
 					rel="stylesheet"
@@ -157,7 +160,6 @@ export default function RootLayout({
 						{children}
 						<ContactSection />
 						<Footer />
-						<SplashCursor />
 					</TooltipProvider>
 				</ThemeProvider>
 			</body>
