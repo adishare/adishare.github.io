@@ -62,7 +62,7 @@ export default function Projects() {
 						</h1>
 					</div>
 					{/* Filter Buttons */}
-					<div className="flex flex-wrap gap-2  backdrop-blur-sm rounded-2xl p-2 ">
+					<div className="flex flex-wrap gap-2  backdrop-blur-xs rounded-2xl p-2 ">
 						{roles.map((role) => (
 							<button
 								type="button"
@@ -70,7 +70,7 @@ export default function Projects() {
 								onClick={() => setActiveFilter(role)}
 								className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-background/50 ${
 									activeFilter === role
-										? "bg-background text-foreground shadow-sm border border-border/50"
+										? "bg-background text-foreground shadow-xs border border-border/50"
 										: "text-muted-foreground hover:text-foreground hover:bg-background/50"
 								}`}
 							>
@@ -97,10 +97,10 @@ export default function Projects() {
 								<div className="group cursor-pointer">
 									<div className="bg-gray-100 dark:bg-gray-800 rounded-2xl overflow-hidden relative hover:scale-105 transition-transform duration-300">
 										{/* Project Header */}
-										<div className="absolute top-0 left-0 right-0 z-10 p-3 bg-gradient-to-b from-black/80 to-transparent">
+										<div className="absolute top-0 left-0 right-0 z-10 p-3 bg-linear-to-b from-black/80 to-transparent">
 											<div className="flex items-center justify-between">
 												<div className="flex  gap-3">
-													<div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg">
+													<div className="bg-white/10 backdrop-blur-xs p-2 rounded-lg">
 														{getIcon(project.icon_name)}
 													</div>
 													<div>
@@ -111,7 +111,7 @@ export default function Projects() {
 															{project.roles.map((role, idx) => (
 																<span
 																	key={idx}
-																	className="bg-white/10 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-xs font-medium"
+																	className="bg-white/10 backdrop-blur-xs text-white px-2 py-0.5 rounded-full text-xs font-medium"
 																>
 																	{role}
 																</span>
@@ -138,13 +138,13 @@ export default function Projects() {
 											<CarouselContent>
 												{project.screenshots.map((screenshot, idx) => (
 													<CarouselItem key={idx}>
-														<div className="relative aspect-[4/3]">
+														<div className="relative aspect-4/3">
 															<img
 																src={screenshot.src}
 																alt={screenshot.alt}
 																className="w-full h-full object-cover"
 															/>
-															<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+															<div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0" />
 
 															{/* Tags Overlay */}
 															<div className="absolute bottom-4 left-4 right-4">

@@ -170,13 +170,13 @@ export default async function ProjectPage({ params }: any) {
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 									{project.screenshots.map((screenshot, idx) => (
 										<div key={idx} className="group relative">
-											<div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+											<div className="relative aspect-4/3 rounded-2xl overflow-hidden">
 												<img
 													src={screenshot.src}
 													alt={screenshot.alt}
 													className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 												/>
-												<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+												<div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0" />
 												<div className="absolute bottom-4 left-4 right-4">
 													<p className="text-white text-sm font-medium">
 														{screenshot.caption}
@@ -186,7 +186,7 @@ export default async function ProjectPage({ params }: any) {
 															{screenshot.tags.map((tag, tagIdx) => (
 																<span
 																	key={tagIdx}
-																	className="bg-white/10 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-xs"
+																	className="bg-white/10 backdrop-blur-xs text-white px-2 py-0.5 rounded-full text-xs"
 																>
 																	{tag}
 																</span>

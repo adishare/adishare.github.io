@@ -170,7 +170,7 @@ export default function ProjectDetails() {
 						<div className="flex items-center justify-between text-white">
 							<div>
 								<div className="flex items-center mb-4">
-									<div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-yellow-500 rounded-xl mr-4" />
+									<div className="w-12 h-12 bg-linear-to-br from-purple-500 to-yellow-500 rounded-xl mr-4" />
 									<div>
 										<h1 className="font-clash text-4xl font-medium">
 											{project.title}
@@ -323,7 +323,7 @@ export default function ProjectDetails() {
 					<div className="space-y-6">
 						{project.features.map((feature, index) => (
 							<div key={index} className="flex items-start">
-								<div className="w-2 h-2 bg-accent rounded-full mr-4 mt-2 flex-shrink-0" />
+								<div className="w-2 h-2 bg-accent rounded-full mr-4 mt-2 shrink-0" />
 								<div>
 									<h3 className="font-semibold mb-2">{feature.title}:</h3>
 									<p className="text-muted-foreground leading-relaxed">

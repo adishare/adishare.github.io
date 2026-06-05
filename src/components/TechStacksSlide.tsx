@@ -77,12 +77,12 @@ const TechStacksSlide = ({ technologies = defaultTechnologies }) => {
 	return (
 		<AnimatedSection>
 			<div className="relative w-full">
-				<div className="absolute left-0 top-0 bottom-0 w-24 lg:w-64 bg-gradient-to-r from-background  to-transparent z-10" />
+				<div className="absolute left-0 top-0 bottom-0 w-24 lg:w-64 bg-linear-to-r from-background  to-transparent z-10" />
 				<div className="flex animate-scroll">
 					{technologies.map((tech, index) => (
-						<div key={index} className="flex-shrink-0 mx-2 p-1">
+						<div key={index} className="shrink-0 mx-2 p-1">
 							<div
-								className={`w-fit gap-1 px-4 h-10 bg-white dark:bg-neutral-800 drop-shadow-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform`}
+								className={`w-fit gap-1 px-4 h-10 bg-white dark:bg-neutral-800 drop-shadow-xs rounded-full flex items-center justify-center group-hover:scale-110 transition-transform`}
 							>
 								<div className={`${tech.textColor} text-xs font-bold`}>
 									{tech.name.slice(0, 2).toUpperCase()}
@@ -94,9 +94,9 @@ const TechStacksSlide = ({ technologies = defaultTechnologies }) => {
 						</div>
 					))}
 					{technologies.map((tech, index) => (
-						<div key={`duplicate-${index}`} className="flex-shrink-0 mx-2 p-1">
+						<div key={`duplicate-${index}`} className="shrink-0 mx-2 p-1">
 							<div
-								className={`w-fit gap-1 px-4 h-10 bg-white dark:bg-neutral-800 drop-shadow-sm rounded-full flex items-center justify-center group-hover:scale-110 transition-transform`}
+								className={`w-fit gap-1 px-4 h-10 bg-white dark:bg-neutral-800 drop-shadow-xs rounded-full flex items-center justify-center group-hover:scale-110 transition-transform`}
 							>
 								<div className={`${tech.textColor} text-xs font-bold`}>
 									{tech.name.slice(0, 2).toUpperCase()}
@@ -108,7 +108,7 @@ const TechStacksSlide = ({ technologies = defaultTechnologies }) => {
 						</div>
 					))}
 				</div>
-				<div className="absolute right-0 top-0 bottom-0 w-24 lg:w-64 bg-gradient-to-l from-background  to-transparent z-10" />
+				<div className="absolute right-0 top-0 bottom-0 w-24 lg:w-64 bg-linear-to-l from-background  to-transparent z-10" />
 			</div>
 		</AnimatedSection>
 	);

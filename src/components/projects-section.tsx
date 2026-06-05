@@ -27,7 +27,7 @@ export default function ProjectsSection() {
 		return (
 			<div className="group cursor-pointer h-full">
 				<div
-					className={`bg-muted/50 backdrop-blur-sm rounded-2xl overflow-hidden relative hover:scale-105 transition-transform duration-300 h-full`}
+					className={`bg-muted/50 backdrop-blur-xs rounded-2xl overflow-hidden relative hover:scale-105 transition-transform duration-300 h-full`}
 				>
 					<img
 						src={project.screenshots[0].src}
@@ -36,7 +36,7 @@ export default function ProjectsSection() {
 						decoding="async"
 						className="mx-auto h-full w-full object-cover rounded-xl shadow-lg hover:scale-150 transition-transform duration-300"
 					/>
-					<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
+					<div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0" />
 					<div className="absolute bottom-4 left-4 right-4">
 						<p className="text-white text-sm font-medium">
 							{project.screenshots[0].caption}

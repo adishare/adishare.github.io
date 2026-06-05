@@ -60,7 +60,7 @@ export default function StickyHeader() {
 		<header
 			className={`sticky top-2 z-50 transition-all duration-500 ease-in-out mx-auto ${
 				scrollY > 0
-					? "backdrop-blur-md bg-white/50 dark:border dark:border-white/15 dark:bg-black/50 rounded-full shadow-sm max-w-xl mx-auto"
+					? "backdrop-blur-md bg-white/50 dark:border dark:border-white/15 dark:bg-black/50 rounded-full shadow-xs max-w-xl mx-auto"
 					: "bg-transparent dark:bg-transparent  mx-0 max-w-7xl"
 			}`}
 			style={{
@@ -79,7 +79,7 @@ export default function StickyHeader() {
 					}
 				>
 					{/* Logo */}
-					<div className="flex-shrink-0">
+					<div className="shrink-0">
 						<h1 className="text-2xl font-thin font-clash text-accent">aD</h1>
 					</div>
 

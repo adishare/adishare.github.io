@@ -285,7 +285,7 @@ export default function Contact() {
 												{String(index + 1).padStart(2, "0")}. {faq.question}
 											</span>
 											<ChevronDown
-												className={`transition-transform duration-300 flex-shrink-0 ${
+												className={`transition-transform duration-300 shrink-0 ${
 													isOpen ? "rotate-180" : "rotate-0"
 												}`}
 											/>

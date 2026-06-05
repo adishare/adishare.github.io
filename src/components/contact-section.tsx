@@ -13,7 +13,7 @@ export default function ContactSection() {
 	return (
 		<AnimatedSection
 			id="contact"
-			className="bg-card py-12 drop-shadow-sm rounded-3xl max-w-7xl lg:mx-auto mx-4  md:mb-16 mb-8"
+			className="bg-card py-12 drop-shadow-xs rounded-3xl max-w-7xl lg:mx-auto mx-4  md:mb-16 mb-8"
 		>
 			<div className=" absolute opacity-20 top-0 w-full h-full">
 				<Threads amplitude={5} distance={0} enableMouseInteraction={true} />
@@ -33,7 +33,7 @@ export default function ContactSection() {
 						</span>
 					</div>
 					<h2 className="font-clash text-4xl md:text-7xl font-medium mb-12 max-w-3xl mx-auto leading-tight">
-						Need a frontend engineer for your product team?
+						Let's create your next big idea.
 					</h2>
 					<Button
 						onClick={() => router.push("/contact")}
